@@ -1,0 +1,21 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Pull Car</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="background-area">
+	<ion-card class="card-info-type">
+		<ion-card-content no-padding>
+			<modal-header [ticket]="ticket" (editTicket)="editTicket()"></modal-header>
+			<modal-details [ticket]="ticket"></modal-details>
+		</ion-card-content>
+	</ion-card>
+
+	<card-notes-photos-map-view [config]="config"></card-notes-photos-map-view>
+</ion-content>
+
+<ion-footer>
+	<modal-footer (submit)="submit($event)" (cancel)="dismiss($event)">
+	</modal-footer>
+</ion-footer>

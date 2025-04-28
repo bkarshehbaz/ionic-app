@@ -1,0 +1,82 @@
+// export let t = {
+export const YES = "Yes";
+export const NO = "No";
+export const PLEASE_WAIT = "Please wait...";
+export const CHOOSE_TICKET_TYPE = "Choose Ticket Type";
+export const CHOOSE_EVENT = "Choose Event";
+export const NOTES = "Notes";
+export const EVENT = "Event";
+export const SIGN_IN = "Sign in";
+export const SIGN_OUT = "Sign out";
+export const logoutFromAllDev = "Sign out from other devices and sign in?";
+export const TICKET_NUMBER = "Ticket Number";
+export const FIRST_NAME = "First Name";
+export const MIDDLE_NAME = "Middle Name";
+export const LAST_NAME = "Last Name";
+export const EMAIL = "Email";
+export const REGISTRATION_NUMBER = "Reservation Number";
+export const ROOM_NUMBER = "Room Number";
+export const TICKET_TYPE = "Ticket Type";
+export const CHOOSE_COMPANY_EVENT = "Company/Event";
+export const PHONE_NUMBER = "Phone Number";
+export const REVIEW_CHANGES = "Review Changes";
+export const GO_BACK = "Go Back";
+export const REVIEW_EDIT = "Review Edit";
+export const DISAGREE = "Disagree";
+export const AGREE = "Agree";
+export const CAR_YEAR = "Car Year";
+export const LICENSE_PLATE = "License Plate";
+export const CAR_MAKE = "Car Make";
+export const CAR_MODEL = "Car Model";
+export const TRANSMISSION_STYLE = "Transmission Style";
+export const CAR_COLOR = "Car Color";
+
+export const MANUAL: TransmissionType = "Manual";
+export const AUTO: TransmissionType = "Auto";
+export type TransmissionType = "Manual" | "Auto";
+
+export const ADD = "Add";
+export const ADD_A_NOTE = "Add a note";
+export const WRITE_A_NOTE = "Write a note";
+export const CANCEL = "Cancel";
+export const GO = "Go";
+export const CHOOSE_A_PROPERTY = "Choose a property";
+// export const COMMA_CHOOSE_A_PROPERTY = ", choose a property";
+export const HI_BLANK = "Hi ";
+export const SCANNING_VIN = "Scanning VIN";
+export const PLEASE_SELECT_A_MAKE_FIRST = "Please, select a make first!";
+export const ADD_CAR = "Add Car";
+export const FILTER_OPTIONS = "Filter Options";
+export const SELECT_A_MAKE = "Select a make";
+export const SELECT_A_MODEL_FOR = "Select a model for ";
+export const SAVE = "Save";
+export const SUBMIT = "Submit";
+export const CHOOSE_PARK_AREA = "Choose Park Area";
+export const EDIT_CAR = "Edit Car";
+export const SUMMARY = "Summary";
+export const PLEASE_FILL_OUT_THE_REQUIRED_FIELDS_FIRST = "Please fill out the required fields first!";
+export const ARE_YOU_SURE_WANT_TO_SUBMIT = "Are you sure want to submit";
+export const ARE_YOU_SURE_YOU_WANT_TO_CHOOSE_BLANK = "Are you sure you want to choose ";
+export const UNFINISHED_TICKET = "You left an unfinished ticket, would you like to resume?";
+export const RESET_TICKET = "Are you sure you want reset the ticket?";
+export const CANT_GO_NEXT = "Sorry, can't go next!";
+
+export const NEXT = "Next";
+export const STAGE = "Stage";
+
+export const PARK_LOCATION = "Park Location";
+export const PHOTOS_NOTES = "Photos/Notes";
+export const CAR = "Car";
+export const CUSTOMER = "Customer";
+export const EDIT_WITH_SPACE_AT_THE_END = "Edit ";
+export const SOMETHING_LOWER_CASE = "something";
+
+export const SOMETHING_WENT_WRONG = "Something went wrong!";
+export const PREPARING_TICKET = "Preparing Ticket...";
+export const LOADING = "Loading...";
+export const SUBMITTING = "Submitting...";
+export const PREPARING_TICKET_CHANGES = "Preparing Ticket Changes...";
+
+export const LOGGING_OUT = "Signing out...";
+// };
+export const SIGNED_IN_SUCCESSFULLY = "Signed in successfully!";

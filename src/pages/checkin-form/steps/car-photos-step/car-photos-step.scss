@@ -1,0 +1,143 @@
+car-photos-step {
+    $text-input-ios-show-focus-highlight: false;
+    $text-input-md-show-focus-highlight: false;
+
+    // ion-fab {
+    //     position: fixed !important;
+    //     bottom: 115px !important;
+    // }
+
+    .add-note-item {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        border-bottom: 0.55px solid #c8c7cc !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+        width: calc(100% - 24px) !important;
+    }
+
+	textarea {
+		min-height: 20px !important;
+	}
+
+	.right-option-button {
+		width: 25%;
+		background-color: map-get($colors, secondary);
+        // padding-top: 16px;
+        display: grid;
+		&:after {
+			// content: '\2807';
+            // font-size: 60px;
+            content: '\2807';
+            font-size: 60px;
+            /* background-color: red; */
+            display: grid;
+            align-self: center;
+            height: initial;
+            width: calc(100% - 10px);
+            padding-left: 2.5px;
+		}
+    }
+
+    .add-photo {
+        ion-card {
+            ion-card-content {
+                ion-item {
+                    background-color: rgba(219, 219, 219, 0.41) !important;
+                    height: -webkit-fill-available;
+                    text-align: -webkit-center;
+                
+                    ion-icon {
+                        font-size: 42px !important;
+                    }
+                }
+            }
+        }
+    }
+    
+    // .is-ipad {
+    //     .add-photo {
+    //         ion-card {
+    //             // min-height: 89.5px !important;
+    //             ion-card-content {
+    //                 height: 100% !important;
+    //                 background-color: rgba(219, 219, 219, 0.41) !important;
+    //                 text-align: center !important;
+    //                 ion-icon {
+    //                     // text-align: center;
+    //                     // font-size: 42px !important;
+    //                     // min-height: 60px !important;
+    //                     // height: 60px !important;
+    //                     // margin-top: calc(50% - 30px) !important;
+    //                     // margin-top: calc(50% - 26px) !important;
+    //                     font-size: 42px !important;
+    //                     min-height: 60px !important;
+    //                     height: 60px !important;
+    //                     max-height: 60px !important;
+    //                     margin-top: calc(50% - 30px) !important;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    // .is-not-ipad {
+    //     .add-photo {
+    //         ion-card {
+    //             // min-height: 89.5px !important;
+    //             ion-card-content {
+    //                 height: 100% !important;
+    //                 background-color: rgba(219, 219, 219, 0.41) !important;
+    //                 text-align: center !important;
+    //                 ion-icon {
+    //                     // text-align: center;
+    //                     font-size: 42px !important;
+    //                     min-height: 60px !important;
+    //                     height: 60px !important;
+    //                     margin-top: calc(50% - 30px) !important;
+    //                     // margin-top: calc(50% - 26px) !important;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+
+
+
+    ion-col {
+        position: initial !important;
+	}
+
+    ion-card {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        width: 100% !important;
+    }
+    ion-thumbnail {
+        overflow: hidden;
+
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+
+        position: relative;
+        margin-left: -4px !important;
+        padding-bottom: calc(100% + 8px);
+        z-index: 1000;
+        // border: 5px solid lightgrey !important;
+        // border-radius: 30px !important;
+        // background-color: #ececec !important;
+
+
+        img {
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            height: auto;
+            width: auto;
+        }
+    }
+}

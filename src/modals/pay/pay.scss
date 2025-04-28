@@ -1,0 +1,44 @@
+// pay-component, pay-cash-component{
+pay-component {
+    // $item-ios-detail-push-show: false !default;
+    // ion-content{
+    //     margin-top: 56px;
+    // }
+    h1{
+        font-size: 3.5rem !important;
+        font-weight: 100;
+        margin: 0px !important;
+        // color: #437fb3;
+        // color: rgba(0,0,0,0.6);
+        color: #696969 !important;
+    }
+
+    ion-content{
+        // background-color: #696969 !important;
+        background-color: #ececec !important
+    }
+
+    // .item-inner{
+    //     text-align: center;
+    //     padding-right: 0px !important;
+    //     background: none !important;
+    //     border-bottom: 0px !important;
+    //     color: #437fb3;
+    // }
+}
+
+// pay-cash-component{
+//     .range-tick{
+//         display: none;
+//     }
+//
+//     .range-tick:nth-child(2),
+//     .range-tick:nth-child(6),
+//     .range-tick:nth-child(11),
+//     .range-tick:nth-child(21),
+//     .range-tick:nth-child(51),
+//     .range-tick:nth-child(101)
+//     {
+//         display: block;
+//     }
+// }

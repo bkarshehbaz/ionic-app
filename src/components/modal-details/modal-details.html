@@ -1,0 +1,22 @@
+<ion-grid id="content-grid">
+	<ion-row>
+		<ion-col col-4 class="left-content" align-self-center>
+			<div class="mh-car-profile-picture">
+				<img-loader [src]="ticket | profilePhoto"></img-loader>
+			</div>
+		</ion-col>
+
+		<ion-col col-8 class="right-content">
+			<!-- <table> -->
+			<ion-grid>
+					<keyvalue-row [lWidth]="3" [rWidth]="9" key="Make" [value]="(ticket?.Car?.makeID | makeName)"></keyvalue-row>
+					<keyvalue-row [lWidth]="3" [rWidth]="9" key="Model" [value]="(ticket?.Car?.modelID | modelName)"></keyvalue-row>
+					<keyvalue-row [lWidth]="3" [rWidth]="9" key="Year" [value]="(ticket?.Car?.carYear)"></keyvalue-row>
+					<keyvalue-row [lWidth]="3" [rWidth]="9" key="Trans" [value]="ticket?.Car?.manual == 1 ? 'Manual' : ticket?.Car?.manual == 0 ? 'Auto' : ''"></keyvalue-row>
+					<keyvalue-row [lWidth]="3" [rWidth]="9" key="Place" [value]=" ticket?.TicketType?.ticketTypeName"></keyvalue-row>
+			</ion-grid>
+		</ion-col>
+
+	</ion-row>
+
+</ion-grid>

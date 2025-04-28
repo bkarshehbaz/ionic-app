@@ -1,0 +1,41 @@
+keyvalue-row {
+
+	.col-3 {
+		@extend [col-3];
+	}
+
+	.col-4 {
+		@extend [col-4];
+	}
+
+	.col-8 {
+		@extend [col-8];
+	}
+	.col-9 {
+		@extend [col-9];
+	}
+
+	.left-col p {
+		float: right !important;
+		text-align: right;
+		margin-top: 0 !important;
+		width: 100%;
+		font-weight: bold;
+		font-size: 12px !important;
+	}
+
+	.right-col p {
+		float: left;
+		margin-top: 0 !important;
+		width: 100%;
+		font-size: 12px !important;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	ion-row {
+		border-bottom: 1px solid lightgray;
+	}
+
+}

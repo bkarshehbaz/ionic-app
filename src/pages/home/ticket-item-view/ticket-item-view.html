@@ -1,0 +1,121 @@
+<ion-list class="ion-list-landscape" *ngIf="tickets">
+
+	<p class="no-content-tickets" *ngIf="tickets?.length == 0"> {{noContentMsg}}</p>
+
+	<!-- <ion-spinner class="vss-spinner-medium" *ngIf="!tickets"></ion-spinner> -->
+
+    <div #spanItem class="span-ion-item" *ngFor="let ticket of tickets; let i=index; trackBy:trackById">
+
+        <div class="div-with-border" *ngIf="(i < myLimit) && ticket">
+			<ion-item #ionItem (click)="addElementMiddleWare.next({ ev: $event, i: i, ticket: ticket });">
+
+				<div class="car-profile-picture" item-left>
+					<img-loader [src]="ticket | profilePhoto"></img-loader>
+				</div>
+
+				<ion-grid class="info-container">
+					<ion-row no-margin class="first-row" no-padding>
+						<ion-col *ngIf="ticket?.Customer"
+								class="customer-full-name"
+								align-self-center
+								col-6>
+								<span>{{ ticket?.customerFullName }}</span>
+								<!-- <span>{{ ticket?.Customer | customerFullname | async }}</span> -->
+								<ion-spinner *ngIf="ticket | inProgress" name="bubbles"></ion-spinner>
+						</ion-col>
+						<ion-col class="last-modified-timer" col-3 align-self-center>
+							<span [innerHtml]="ticket?.timer | async" *ngIf="ticket?.timer && !isDestroyed"></span>
+						</ion-col>
+
+						<ion-col class="ticket-number"
+								col-3
+								text-right
+								align-self-center>
+							<button disabled
+									color='danger'
+									ion-button
+									small
+									no-margin
+									outline> {{ticket?.ticketNumber}}</button>
+						</ion-col>
+
+
+						<!--<ion-col width-50> {{ ticket?.lastModified | amDateFormat:'HH:mm:ss' }}</ion-col>-->
+						<!--<ion-col col-3 text-right class="ticket-number"></ion-col>-->
+					</ion-row>
+
+					<ion-row *ngIf="type != 'busy'" no-margin no-padding>
+						<ion-col class="car-column-info" col-9>
+							
+							<span> <span [class]="ticket?.Car?.makeName | makeIcon"></span> {{ ticket?.Car | carInfo }}</span>
+							<!-- <span> <span [class]="ticket?.Car?.makeID | makeName | makeIcon"></span> {{ ticket?.Car | carInfo }}</span> -->
+						</ion-col>
+
+						<ion-col class="color-col"
+								col-3
+								text-right
+								no-padding
+								align-self-center>
+								<!-- [style.background-color]="ticket?.Car?.colorID | color | async" -->
+							<button disabled
+									[style.background-color]="ticket?.Car?.colorHex"
+									ion-button
+									small
+									no-margin> {{ticket?.ticketNumber}}</button>
+						</ion-col>
+					</ion-row>
+
+					<ion-row no-margin no-padding>
+						<ion-col col-6>
+							<span class="ticket-type">{{ ticket?.TicketType?.ticketTypeName }}</span>
+							<!-- <span class="ticket-type">{{ ticket?.ticketTypeID | ticketTypeName | async }}</span> -->
+						</ion-col>
+
+						<ion-col text-right col-6>
+							<valecons [ticket]="ticket"></valecons>
+						</ion-col>
+
+					</ion-row>
+				</ion-grid>
+			</ion-item>
+		</div>
+    </div>
+</ion-list>
+
+<ion-list *ngIf="!tickets">
+	<div *ngFor="let _item of [0,1,2,3,4,5,6]" class="loading-skeleton span-ion-item">
+		<div class="div-with-border">
+			<ion-item>
+				<div class="car-profile-picture" item-left></div>
+				<ion-grid class="info-container">
+					<ion-row no-margin class="first-row" no-padding>
+						<ion-col class="customer-full-name" align-self-center col-6>
+							<span skeleton>Lucas Estrella Jimenez</span>
+						</ion-col>
+						<ion-col class="last-modified-timer" col-3 align-self-center>
+							<span skeleton>00:00:00</span>
+						</ion-col>
+						<ion-col class="ticket-number" col-3 text-right align-self-center>
+							<button skeleton disabled ion-button small no-margin outline>12345</button>
+						</ion-col>
+					</ion-row>
+					<ion-row no-margin no-padding>
+						<ion-col class="car-column-info" col-9><span skeleton>2002 Chevrolet Cavalier</span></ion-col>
+						<ion-col class="color-col" col-3 text-right no-padding align-self-center>
+							<button skeleton disabled ion-button small no-margin>12345</button>
+						</ion-col>
+					</ion-row>
+					<ion-row no-margin no-padding>
+						<ion-col col-6><span skeleton class="ticket-type">Hotel California</span></ion-col>
+						<ion-col text-right col-6><span skeleton>12345678912345678</span></ion-col>
+					</ion-row>
+				</ion-grid>
+			</ion-item>
+		</div>
+	</div>
+</ion-list>
+
+<!-- https://github.com/driftyco/ionic/issues/10976 -->
+<ion-infinite-scroll threshold="100px" [enabled]="myLimit <= tickets?.length" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingText="Loading more data..."></ion-infinite-scroll-content>
+</ion-infinite-scroll>

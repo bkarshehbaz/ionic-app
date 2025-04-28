@@ -1,0 +1,21 @@
+@import "theme/theme";
+
+select-popover {
+
+	// ::ng-deep .popover-content {
+	// 	.popover-viewport {
+	// 		overflow: hidden;
+	// 	}
+	// }
+
+	ion-list {
+		margin: -1px 0 12px !important;
+		max-height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+		max-height: fill-available;
+	}
+
+	.disabled {
+		pointer-events: none !important;
+		opacity: 0.9 !important;
+	}
+}

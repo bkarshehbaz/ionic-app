@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{ title }}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+            <modal-header [ticket]="ticket" (editTicket)='editTicket()'></modal-header>
+            <modal-details [ticket]="ticket"></modal-details>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-content no-margin no-padding>
+            <div class="park-items">
+
+				<ion-item class="pa-item" (click)="chooseParkArea($event)" [ngClass]="validations.parkArea" no-padding>
+					<ion-label floating>Park Area</ion-label>
+					<ion-input disabled [(ngModel)]="chosenParkArea.parkAreaName">
+					</ion-input>
+					<ion-icon name="ios-arrow-down" item-right ></ion-icon>
+				</ion-item>
+
+				<ion-item class="pk-item" [ngClass]="validations.parkLocationName"
+						  [class.disabled]="validations.parkArea != 'vvs-park-valid'"
+						  no-padding>
+					<ion-label floating>Park Location</ion-label>
+					<ion-input [disabled]="validations.parkArea != 'vvs-park-valid'"
+								[(ngModel)]="parkLocationName"
+								type="text"
+								name="parkLocationName"
+								(ngModelChange)="validateParkLocation($event)">
+					</ion-input>
+				</ion-item>
+              </div>
+        </ion-card-content>
+    </ion-card>
+
+    <card-notes-photos-map-view [config]="config"></card-notes-photos-map-view>
+
+</ion-content>
+
+<ion-footer [style.background-color]="'#fff'">
+    <!-- <footer-message [title] [subtitle]></footer-message> -->
+    <modal-footer [disableSubmit]="parkLocationName == ''"
+                  (submit)="submit($event)"
+                  (cancel)="selfDismiss()">
+    </modal-footer>
+<ion-footer>

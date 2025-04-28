@@ -1,0 +1,28 @@
+.pay-card-confirm-modal {
+    // width: 90vw !important;
+    // height: 50vh !important;
+    // margin: 20vh 5vw !important;
+    .popover-content {
+        width: 80vw !important;
+        height: 50vh !important;
+        top: 20vh !important;
+        left: 10vw !important;
+    }
+}
+
+pay-card-confirm {
+    .tt {
+        // padding: 8px 16px;
+        width: 100%;
+    }
+    
+    ion-row > ion-col:first-child {
+        font-weight: bold;
+    }
+    
+    .message {
+        margin: 16px 26px !important;
+        font-size: 17px;
+        font-weight: 600;
+    }
+}

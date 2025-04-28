@@ -1,0 +1,121 @@
+<ion-header>
+
+	<ion-navbar [ngClass]="'from-'+from" [color]="'newdark'" [hideBackButton]="true">
+		<ion-buttons start>
+			<button (click)="goBack()" [hidden]="false" ion-button="bar-button"
+				class="vvs-back-button back-button back-button-ios">
+				<ion-icon class="back-button-icon back-button-icon-ios" name="arrow-back"></ion-icon>
+				<span class="back-button-text back-button-text-ios">Go Back</span>
+			</button>
+		</ion-buttons>
+
+		<div *ngIf="showTicketNumberCol" class="ticket-number-col">
+			<img class="ticket-image" [src]="thisSrc">
+			<ion-icon (click)="performAction('edit')" class="ctw-edit-icon" name="more"></ion-icon>
+			<span class="ticket-number"> {{ticket?.ticketNumber}}</span>
+		</div>
+
+	</ion-navbar>
+</ion-header>
+
+<ion-content no-bounce [ngClass]="'from-'+from">
+
+	<div class="ticket-details content-background">
+
+		<ion-grid id="main-grid" class="background-area">
+			<ion-row>
+				<ion-col col-4 class="image-to-go-upper">
+					<div class="ctv-car-profile-picture">
+						<img-loader [src]="ticket | profilePhoto"></img-loader>
+					</div>
+
+					<div *ngFor="let operation of operations;">
+						<button (click)="operation.action()" [disabled]="!operation.enable" full round item-right
+							icon-left style="height: 2.5em;" *ngIf="!operation.hidden" ion-button>
+							{{ operation.label }}
+						</button>
+					</div>
+
+				</ion-col>
+
+				<ion-col col-8 no-padding>
+					<ion-card class="card-info-type">
+						<ion-card-content>
+							<ion-grid>
+								<ion-row>
+									<ion-col col-8 [style.display]="ticket?.eventID ? 'block' : 'flex'">
+										<span id="customerName">
+											<!-- <span>{{ticket?.Customer?.customerFirstName}}</span>
+											<span>{{ticket?.Customer?.customerLastName}}</span> -->
+											{{ticket?.Customer?.customerFirstName}}
+											{{ticket?.Customer?.customerLastName}}
+										</span>
+										<span class="calendar-event">
+											{{ ticket?.eventID | calendarEventName | async }}
+										</span>
+									</ion-col>
+									<ion-col class="valecons" col-5 no-padding align-self-center>
+										<valecons [ticket]="ticket"></valecons>
+									</ion-col>
+								</ion-row>
+
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+
+					<ion-card class="card-info-type">
+						<ion-card-content>
+							<ion-grid>
+								<keyvalue-row key="Place"
+									[value]=" ticket?.TicketType?.ticketTypeID | ticketTypeName | async"></keyvalue-row>
+								<!-- <keyvalue-row key="Event" [value]=" ticket?.eventID | calendarEventName | async"></keyvalue-row> -->
+								<keyvalue-row key="Arrival"
+									[value]=" ticket?.createDate | date : 'EEEE, MMM d, h:mm a' "></keyvalue-row>
+								<keyvalue-row key="Room #" [value]=" ticket?.roomNumber "></keyvalue-row>
+								<!-- <keyvalue-row *ngIf="ticket?.Email" key="Email" [value]=" ticket?.Email"></keyvalue-row> -->
+								<keyvalue-row *ngIf="ticket?.confirmation_number" key="Reservation No"
+									[value]=" ticket?.confirmation_number"></keyvalue-row>
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+
+					<ion-card *ngIf="ticket?.Car?.makeID" class="card-info-type">
+						<ion-card-content>
+							<ion-grid>
+								<keyvalue-row key="Make" [value]=" ticket?.Car?.makeID | makeName "></keyvalue-row>
+								<keyvalue-row key="Model" [value]=" ticket?.Car?.modelID | modelName "></keyvalue-row>
+								<keyvalue-row key="Year" [value]=" ticket?.Car?.carYear "></keyvalue-row>
+								<keyvalue-row key="Trans."
+									[value]="ticket?.Car?.manual == 1 ? 'Manual' : ticket?.Car?.manual == 0 ? 'Auto' : ''"></keyvalue-row>
+								<keyvalue-row key="L. Plate" [value]="ticket?.Car?.licensePlate || '-'"></keyvalue-row>
+								<!-- <keyvalue-row key="Location" [value]="ticket?.statusName == 'IN' || ticket?.statusName == 'PULL_REQUEST' ? (ticket?.TicketSequence?.ParkLocation | fullParkLocation | async) : '' "></keyvalue-row> -->
+							</ion-grid>
+						</ion-card-content>
+					</ion-card>
+
+					<ion-card class="card-info-type move-up">
+						<ion-card-content>
+							<ion-grid>
+								<keyvalue-row key="Location"
+									[value]="ticket?.statusName == 'IN' || ticket?.statusName == 'PULL_REQUEST' ? ((ticket?.TicketSequence?.ParkLocation | fullParkLocation | async) || 'N/A') : 'N/A' "></keyvalue-row>
+								<keyvalue-row key="Price"
+									[value]="'&#36;' + ticket?.TicketType?.ticketPrice + '/nights'"></keyvalue-row>
+								<keyvalue-row key="Balance" [value]="ticket?.balance | currency"></keyvalue-row>
+								<keyvalue-row key="Status" [value]="status" [whitespace]="'normal'"></keyvalue-row>
+							</ion-grid>
+						</ion-card-content>
+
+					</ion-card>
+
+					<!-- <card-notes-photos-map-view *ngIf="is_iPad" [config]="config"></card-notes-photos-map-view> -->
+
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<!-- <card-notes-photos-map-view *ngIf="!is_iPad" [config]="config"></card-notes-photos-map-view> -->
+		<card-notes-photos-map-view [config]="config"></card-notes-photos-map-view>
+
+		<br>
+	</div>
+</ion-content>

@@ -1,0 +1,60 @@
+<!--<img [ngClass]="'profile-pic ' + classToUse"  src="https://raw.githubusercontent.com/smukov/AvI/d45845a242b03d16d42d6ae221360a678da184ae/Ionic/app/img/hugh.png">-->
+<!-- <span [ngClass]="'profile-pic ' + classToUse" [attr.data-letters]="message.initials"></span> -->
+<!-- <div class="message" [ngClass]="classToUse">
+
+	<photos-row *ngIf="message?.msgImage?.length > 0"
+				[openPicture]="true"
+				[config]="{ images : message.msgImage, class: 'chat', chatID: message.chatID }">
+	</photos-row>
+
+	<div *ngIf="!searchQuery; else hasHighlight;" class="message">
+		{{ message.msgContent | decodeString }}
+	</div>
+
+	<ng-template #hasHighlight>
+		<div class="message" [innerHTML]="message.msgContent | highlight : searchQuery "></div>
+	</ng-template>
+
+	<div class="message-detail">
+		<span style="font-weight:bold;"> {{ message.fullName }}</span>
+		<span> {{message.createDate | date:'shortTime' }}</span>
+		<ion-icon class="not-sending" *ngIf="sending === false" ios="ios-checkmark"></ion-icon>
+		<span *ngIf="sending === true">sending...</span>
+	</div>
+</div> -->
+
+<div class="message" [ngClass]="classToUse">
+	<!-- <img class="user-img" [src]="''" alt="" src="" /> -->
+	<div class="msg-detail">
+
+		<div class="msg-content">
+			<photos-row *ngIf="message?.msgImage?.length > 0"
+						[openPicture]="true"
+						[config]="{ images : message.msgImage, class: 'chat', chatID: message.chatID }">
+			</photos-row>
+			<!-- <span class="triangle"></span> -->
+			<p *ngIf="!searchQuery; else hasHighlight;" class="line-breaker">
+				{{ message.msgContent | decodeString }}
+			</p>
+			<ng-template #hasHighlight>
+				<p class="line-breaker" [innerHTML]="message.msgContent | decodeString | highlight : searchQuery "></p>
+			</ng-template>
+		</div>
+
+		<div class="msg-info">
+			<p>
+				<button (click)="retry.emit({event:$event, message:message})"
+						*ngIf="!message.sending && message.sent == false"
+						outline ion-button small danger>
+					Retry
+				</button>
+				<strong>{{ classToUse == 'left' ? (message.userID | userFLName | async) : 'You' }}</strong> | {{
+					message.createDate | date:'shortTime'
+				}}
+			</p>
+		</div>
+
+
+	</div>
+	<ion-spinner name="dots" *ngIf="message?.sending == true"></ion-spinner>
+</div>

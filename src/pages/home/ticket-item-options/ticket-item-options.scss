@@ -1,0 +1,56 @@
+ticket-item-options {
+
+    div[tio]{
+        overflow: hidden;
+		height: 80px !important;
+
+        .actions-row {
+			height: 50px !important;
+			border-top: 1px dotted rgba(158, 158, 158, 0.34) !important;
+            height: 100%;
+            margin-top: 5px;
+		}
+
+		.status-row {
+			height: 20px !important;
+			border-top: 1px dotted rgba(158, 158, 158, 0.34) !important;
+			padding-top: 7px;
+
+			p {
+				margin: 0;
+				color: #66757f;
+				font-size: 1.15rem !important;
+
+				white-space: nowrap;
+				text-overflow: hidden;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-align: left;
+			}
+
+			[col-12] {
+				padding: 0 8px !important;
+			}
+		}
+
+        i {
+            font-size:2.5rem !important;
+        }
+
+        h6 {
+            padding-top: 0px !important;
+            font-size: 0.9rem !important; // reduced to 0.9rem to make sure "Pull Requests fits in the column"
+		}
+		[col-2]:last-child {
+			margin-left: auto !important;
+		}
+
+		.col-2 {
+            @extend [col-2];
+		}
+		.col-0 {
+			display: none !important;
+		}
+    }
+
+}

@@ -1,0 +1,25 @@
+$ ionic cordova plugin add cordova-plugin-camera
+$ npm install --save @ionic-native/camera
+
+$ ionic cordova plugin add cordova-plugin-ionic-keyboard
+$ npm install --save @ionic-native/keyboard
+
+$ ionic cordova plugin add card.io.cordova.mobilesdk
+$ npm install --save @ionic-native/card-io
+
+$ ionic cordova plugin add cordova-plugin-statusbar
+$ npm install --save @ionic-native/status-bar
+
+$ ionic cordova plugin add cordova-plugin-geolocation
+$ npm install --save @ionic-native/geolocation
+
+$ ionic cordova plugin add cordova-sqlite-storage
+$ npm install --save @ionic-native/sqlite
+
+$ ionic cordova plugin add cordova-plugin-stripe
+$ npm install --save @ionic-native/stripe
+
+$ ionic cordova plugin add cordova-plugin-device
+$ npm install --save @ionic-native/device
+
+$ ionic cordova plugin add https://github.com/manateeworks/phonegap-manateeworks-v3.git

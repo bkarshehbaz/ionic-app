@@ -1,0 +1,285 @@
+ticket-item-view {
+
+    [class^="car-"], [class*=" car-"] {
+        vertical-align: sub !important;
+        font-size: 1.8rem !important;
+    }
+
+	.loading-skeleton {
+
+		/* stylelint-disable property-blacklist */
+		@keyframes shimmer {
+			0% {
+			background-position: -468px 0
+			}
+
+			100% {
+			background-position: 468px 0
+			}
+		}
+
+		// $text-color-rgb:                    0,  0,  0 !default;
+		$text-color-rgb:                    49, 49, 49 !default;
+
+		// Skeleton Text
+		// --------------------------------------------------
+
+		/// @prop - Background color alpha of the skeleton text
+		$skeleton-text-background-alpha:            .065 !default;
+
+		/// @prop - Background color of the skeleton text
+		$skeleton-text-background:                  rgba(var(--background-rgb, var(--ion-text-color-rgb, $text-color-rgb)), $skeleton-text-background-alpha) !default;
+
+		/// @prop - Background color alpha of the skeleton text animation
+		$skeleton-text-background-animated-alpha:   .135 !default;
+
+		/// @prop - Background color of the skeleton text animation
+		$skeleton-text-background-animated:         rgba(var(--background-rgb, var(--ion-text-color-rgb, $text-color-rgb)), $skeleton-text-background-animated-alpha) !default;
+
+
+		.car-profile-picture {
+			background-color: $skeleton-text-background;
+		}
+		[skeleton] {
+			color: transparent !important;
+			// background-color: #eeeeee !important;
+			border-color: transparent !important;
+			position: relative;
+
+			background: linear-gradient(to right, $skeleton-text-background 8%, $skeleton-text-background-animated 18%, $skeleton-text-background 33%);
+			// background: linear-gradient(90deg,rgba(var(--background-rgb,var(--ion-text-color-rgb,0,0,0)),.065) 8%,rgba(var(--background-rgb,var(--ion-text-color-rgb,0,0,0)),.135) 18%,rgba(var(--background-rgb,var(--ion-text-color-rgb,0,0,0)),.065) 33%);
+
+			animation-name: shimmer;
+			animation-timing-function: linear;
+			background-size: 800px 104px;
+			animation-fill-mode: forwards;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+	}
+
+    ticket-item-options {
+        display: block !important;
+    }
+
+    .last-modified-timer.col {
+        justify-content: flex-end;
+	}
+
+	.info-container {
+
+		.first-row {
+
+			ion-col:not(.ticket-number) {
+				// align-self: flex-start !important;
+				align-self: center !important;
+				align-self: flex-center !important;
+				height: 18px !important;
+				display: inline-flex;
+
+				ion-spinner {
+					position: relative;
+					display: inline-block;
+					width: 15px;
+					height: 15px;
+					font-size: 5px;
+					margin-top: -2px !important;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		ion-row.row:nth-child(2) {
+			/* background-color: red !important; */
+			// z-index: 1000;
+			/* display: table; */
+			// border-top: 0.3px solid #cecece;
+			// border-bottom: 0.3px solid #cecece;
+			padding: 2px 0px;
+			margin: 2px 0px;
+		}
+	}
+
+    .item-ios {
+        background-color: unset !important;
+    }
+
+    .car-profile-picture{
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin: 0px !important;
+        position: relative;
+
+        display: block;
+        border-radius: 8px;
+
+        ion-spinner {
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            // height: auto;
+            // width: auto;
+        }
+
+        img{
+            position: absolute;
+            left: -100%;
+            right: -100%;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            height: auto;
+            width: auto;
+            // background-color: #cecece;
+        }
+    }
+
+    .info-container{
+        padding-left: 2.5px !important;
+    }
+
+    .car-column-info {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        span:not(.fa) {
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            width: calc(100% - 5px) !important;
+        }
+    }
+
+    ion-row{
+        ion-col{
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+            align-self: center !important;
+        }
+    }
+
+    .span-ion-item{
+
+		margin: 8px 6px;
+		// background-color: rgba(0, 0, 0, 0.04) !important;
+		// background-color: #f8f8f8 !important;
+		background-color: white !important;
+		border-radius: 6px;
+
+		box-shadow: 0 1px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12) !important;
+
+		.div-with-border{
+            // border-bottom: 0.55px solid #c8c7cc !important;
+            padding-top: 6px !important;
+            padding-bottom: 6px !important;
+        }
+
+        ion-item{
+            padding-left: 8px !important;
+
+			.item-inner{
+                padding-right: 0px !important;
+                border: unset !important;
+            }
+        }
+    }
+
+    span{
+        font-size:1.4rem !important;
+        font-weight:normal !important;
+        line-height:normal !important;
+    }
+    .customer-full-name{
+        span{
+            font-weight: 500 !important;
+            font-size:1.4rem !important;
+
+            overflow-wrap: normal !important;
+            text-overflow: ellipsis !important;
+            overflow-x: hidden !important;
+            display: block !important;
+            white-space: nowrap !important;
+
+            color: #2f4f4f;
+
+            letter-spacing: 0.08rem;
+        }
+    }
+
+    .ticket-type, .car-column-info{
+        color: #66757f;
+    }
+
+    .last-modified-timer{
+        text-align: left !important;
+        padding: 0px !important;
+        span{
+
+			border-top: 0.5px ridge transparent;
+            display: -webkit-box;
+            height: 100%;
+            text-align: -webkit-center;
+
+            // .blink_red
+            .blink_me {
+                animation: blinker 10s linear infinite;
+            }
+            .blink_red {
+                animation: blinker 1s linear infinite;
+                color:red !important;
+                height: 18px !important;
+            }
+
+
+            .blink_off {
+                color:grey !important;
+            }
+
+            @keyframes blinker {
+                50% { opacity: 0.5; }
+            }
+
+        }
+    }
+
+    ion-label{
+        margin: 0px !important;
+    }
+
+    ion-row ion-col:last-of-type {
+        padding-right: 0px !important;
+    }
+
+    .ticket-number{
+        button[disabled]{
+
+            height: 1.7em !important;
+            opacity: 1 !important;
+        }
+    }
+    .color-col{
+        button[disabled]{
+            height: 1.5em !important;
+            opacity: 1 !important;
+            color:transparent !important;
+        }
+        .button-small-ios{
+            border-width: 1px;
+            border:1px solid #cecece;
+        }
+        padding-right: 0px !important;
+    }
+
+    .button-small-ios{
+        margin-bottom: 1px !important;
+        padding: 0 0.4em !important;
+        vertical-align: middle;
+    }
+
+
+    .span-ion-item:empty:after{
+        display:none !important;
+    }
+}

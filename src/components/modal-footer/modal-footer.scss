@@ -1,0 +1,28 @@
+modal-footer{
+    .col[col-6]{
+        .edit-disabled{
+            opacity: 0.55 !important;
+        }
+    }
+
+    .button-small-ios{
+        height: 2.8em !important;
+        border-radius: 5px !important;
+    }
+
+    // .cancel-button{
+    //     background-color: #f53d3d !important;
+    // }
+
+    // .footer-modal-buttons{
+    //     button{
+    //         margin:0px !important;
+    //         border-radius: 5px !important;
+    //     }
+    //     margin: 0px !important;
+	// }
+
+	.button-full.button-outline {
+		border-width: 1px !important;
+	}
+}

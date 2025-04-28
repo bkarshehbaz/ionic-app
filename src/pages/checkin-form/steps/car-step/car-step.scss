@@ -1,0 +1,131 @@
+car-step {
+
+    form {
+        height: -webkit-fill-available;
+    }
+
+    .item-electric-box {
+        bottom: 5px;
+        /* border-bottom: 0; */
+        position: absolute;
+
+        .item-inner {
+            border-bottom: 0 !important;
+        }
+    }
+  
+	.vin-number[disabled] {
+		&, ion-label {
+			@extend .disabled;
+		}
+		ion-input {
+			pointer-events: none !important;
+		}
+	}
+
+	// [formcontrolname=makeName], [formcontrolname=modelName], [formcontrolname=colorName] {
+	// 	.text-input
+	// 	[disabled] {
+	// 		opacity: 1 !important;
+	// 	}
+	// }
+
+    .item-cover{
+        background-color: rgba(255, 255, 255, 0) !important;
+        z-index: -1 !important;
+    }
+    ion-item, #transmission-item, #fueltype-item{
+        height: 68px !important;
+    }
+    $text-input-ios-show-focus-highlight: false;
+    $text-input-md-show-focus-highlight: false;
+    .animated {
+      animation-duration: 1s;
+    }
+
+    ion-spinner{
+        align-self: flex-end !important;
+    }
+
+    ion-col[col-6]{
+        ion-input[name=colorName],
+        ion-input[name=makeName],
+        ion-input[name=modelName]{
+            input{
+                pointer-events: none !important;
+            }
+        }
+        ion-icon{
+            pointer-events: none !important;
+        }
+        input{
+            text-overflow: ellipsis !important;
+        }
+    }
+
+    ion-datetime{
+        z-index: 100 !important;
+    }
+
+    #transmission-item, #fueltype-item {
+        ion-label{
+            margin-top: -18px !important;
+            margin-left: -11px !important;
+        }
+
+        .switch-field input {
+            position: absolute !important;
+            clip: rect(0, 0, 0, 0) !important;
+            height: 1px !important;
+            width: 1px !important;
+            border: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .switch-field label {
+            display: inline-block !important;
+            width: 48.5% !important;
+            background-color: lightgrey;
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 14px !important;
+            font-weight: bold !important;
+            text-align: center !important;
+            padding: 6px 0px !important;
+        }
+
+        .switch-title{
+            float: left !important;
+            color: #000 !important;
+            -webkit-transform: translate3d(0, 0, 0) scale(0.8) !important;
+            transform: translate3d(0, 0, 0) scale(0.8) !important;
+        }
+        .switch-custom-wrapper{
+            float: left !important;
+            position: absolute !important;
+            right: 0px !important;
+            width: 100% !important;//3/30/17
+            bottom: 4px !important;
+        }
+
+        .switch-field label {
+            float: left !important;
+        }
+
+        .switch-field label:hover {
+        	 cursor: pointer !important;
+        }
+
+        .switch-field input:checked + label, .is-checked {
+            background-color: #32db64 !important;
+            color: white !important;
+        }
+
+        .switch-field label:first-of-type {
+            border-radius: 4px 0 0 4px !important;
+        }
+
+        .switch-field label:last-of-type {
+            border-radius: 0 4px 4px 0 !important;
+        }
+    }
+}

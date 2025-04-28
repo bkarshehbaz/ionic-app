@@ -1,0 +1,12 @@
+vvs-debugger {
+
+	.debuggerbody {
+		overflow: auto;
+		background-color: white;
+		height: stretch; // -webkit-fill-available;
+		height: -webkit-fill-available;
+		width: stretch; // -webkit-fill-available;
+		width: -webkit-fill-available;
+	}
+
+}

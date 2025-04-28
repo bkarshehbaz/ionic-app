@@ -1,0 +1,42 @@
+<ion-grid>
+
+    <!-- <ion-row>
+        <ion-col col-6>
+            <button (click)="openCashComponent($event)" ion-item full>
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <h6>CASH</h6>
+            </button>
+        </ion-col>
+
+        <ion-col col-6>
+            <button (click)="onVoucherSelected($event)" ion-item full>
+                <i class="fa fa-ticket" aria-hidden="true"></i>
+                <h6>VOUCHER</h6>
+            </button>
+        </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+        <ion-col col-6>
+            <button (click)="addEditCC()" ion-item full>
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                <h6>CARD</h6>
+            </button>
+        </ion-col>
+
+        <ion-col col-6>
+            <button (click)="onCompensationSelected($event)" ion-item full>
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                <h6>COMP</h6>
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="showCancel == true" class="cancel-row">
+        <ion-col col-12>
+            <button (click)="cancel.emit(true)" ion-item full>
+                Cancel
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-grid>

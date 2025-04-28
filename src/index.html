@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>VVS</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap:; script-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline'; img-src 'self' data:; media-src 'self' data:; font-src 'self' data:; connect-src *"> -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' 'unsafe-inline' *; object-src 'self'; style-src 'self' 'unsafe-inline' https://secure.safewebservices.com; media-src *;">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+  <!-- Manatee Scanner -->
+  <!-- <script type="text/javascript" src="js/MWBConfig.js"></script> -->
+
+  <!--TODO un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => logger.debug('service worker installed'))
+        .catch(err => logger.debug('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/icomoon.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/csshake.min.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/animate.min.css"> -->
+
+
+  <!-- <script src="js/socket.io-1.4.5.js"></script> -->
+</head>
+<body>
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+  <!-- <div style="display:none">
+    <img id="loading-from-outside" style="z-index: 10000000;position: relative;margin-top: 150px;" />
+  </div> -->
+
+  <!-- <div (click)="isLoading = isLoading;" *ngIf="isLoading" id="vvs-loading">
+      <ion-spinner></ion-spinner>
+      <p>Loading...</p>
+  </div> -->
+
+
+  <!-- The polyfills js is generated during the build process -->
+  <!-- <script src="build/polyfills.js"></script> -->
+  <!-- <script src="assets/js/web-animations.min.js"></script> -->
+
+
+
+  <!-- all code from node_modules directory is here -->
+  <script src="build/vendor.js"></script>
+
+
+
+  <!-- <script src="assets/js/index.js"></script>
+  <script>
+      uncaught.start();
+      uncaught.addListener(function (error) {
+          logger.debug('Uncaught error or rejection: ', error.message);
+      });
+  </script> -->
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+  <!-- <script>
+    window.onerror = function (errorMsg, url, lineNumber) {
+           alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+      }
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+pull-request-modal {
+	ion-footer {
+
+		background: white !important;
+
+		.footer-message {
+			display: block;
+			padding: 15px;
+			font-size: 17px;
+			font-weight: bold;
+			color: rgba(29, 29, 29, 0.69);
+			// height: 130px;
+			height: 90px;
+
+			span {
+				margin-top: 8px;
+				display: block;
+				font-size: 14px;
+				font-weight: 400;
+			}
+		}
+	}
+
+	.mh-car-profile-picture{
+		// width: 60px;
+		// height: 60px;
+		border-radius: 5px !important;
+		width: 76px;
+		height: 76px;
+		overflow: hidden;
+		margin: 0px !important;
+		position: relative;
+		img{
+			position: absolute;
+			left: -100%;
+			right: -100%;
+			top: -100%;
+			bottom: -100%;
+			margin: auto;
+			height: auto;
+			width: auto;
+	  }
+	}
+}

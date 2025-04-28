@@ -1,0 +1,101 @@
+// @import "../../ionic-angular/components/picker/picker.scss";
+// ion-picker-cmp{
+//     height: 700vh !important;
+// }
+// .picker-opt[disable-activated]{
+//     display: none !important;
+// }
+pay-cash-component {
+
+    .payment-input-wrapper {
+        display: flex !important;
+        align-items: flex-end !important;
+    }
+
+
+    edit-component{
+        .toolbar-ios ion-title {
+            padding: 0 35px 1px !important;
+        }
+    }
+
+    ion-content{
+
+        background-color: #ececec !important;
+
+        // margin-bottom: 286.5px !important;
+
+        .payment-info{
+            // position: absolute !important;
+            // bottom: 286.5px !important;
+
+            ion-row {
+
+                ion-col {
+                    h4 {
+                        margin: 0px !important;
+                    }
+                }
+
+                ion-col:nth-child(2) {
+                    h4 {
+                        font-weight: 400 !important;
+                    }
+                }
+            }
+        }
+
+        h1, .cash-input {
+            border: 0  !important;
+            font-size: 5rem;
+            font-weight: 100;
+            text-align: center;
+            // margin: 0px !important;
+            // color: #437fb3;
+            // color: rgba(0,0,0,0.6);
+            color: #696969 !important;
+
+            width:100vw;
+            // margin-left: 7.5vw;
+            margin-top: 15vw;
+            background-color: transparent;
+
+            
+        }
+
+    }
+
+  // ion-content{
+  //     background-color: lightgrey !important;
+  // }
+
+  // .scroll-content{
+  //     margin-bottom: 128px !important;
+  // }
+  //
+  // .picker-wrapper{
+  //     bottom: unset !important;
+  //     height: 240px !important;
+  //     margin: 12px !important;
+  //     width: calc(100% - 24px) !important;
+  //     border-top: unset !important;
+  // }
+  //
+  // .picker-opt-selected {
+  //     font-size: 36px !important;
+  //     color: #3E8C3B !important;//dollar color
+  // }
+  //
+  // .balance-info{
+  //     position: absolute;
+  //     top: 252px;
+  //     button{
+  //         pointer-events: all !important;
+  //     }
+  // }
+  //
+  // button{
+  //     pointer-events: all !important;
+  // }
+
+}

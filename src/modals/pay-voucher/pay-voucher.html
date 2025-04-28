@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>Add Voucher</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="background-area">
+	<ion-card class="validation-card">
+		<ion-card-header>
+			<div class="d-flex align-items-center">
+				<span>Voucher Photo</span>
+				<button class="ml-auto" (click)="takeValidationPhoto($event)" ion-button small outline>
+					{{ validationImage ? 'Retake Photo' : 'Take Photo'}}
+				</button>
+			</div>
+		</ion-card-header>
+		<ion-card-content>
+			<!-- <ion-icon *ngIf="!validationImage" ios="ios-add-circle"></ion-icon> -->
+			<div>
+				<img style="height: 45vh;" *ngIf="validationImage" [src]="validationImage" />
+			</div>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+
+<ion-footer>
+    <modal-footer [disableSubmit]="validationImage?.length < 30"
+                  [presentConfirm]="true"
+                  (submit)="submit($event)"
+                  (cancel)="cancel($event)">
+    </modal-footer>
+</ion-footer>

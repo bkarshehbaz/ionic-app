@@ -1,0 +1,99 @@
+review-ticket {
+
+	ion-row {
+		border-bottom: 1px solid #dedede !important;
+	}
+
+	.photos-wrapper {
+		padding: 12px !important;
+		// height: 140px !important;
+		// padding: 5px !important;
+	}
+
+	.photos-key {
+		margin: 6px 12px !important;
+		float: left;
+		padding-right: .5em;
+		color: #878c92;
+		/* margin-top: 6px; */
+		font-size: 16px;
+	}
+
+	.notes-item {
+		.col-key {
+			width: 100% !important;
+		}
+
+		.col-value {
+			padding-left: 0 !important;
+			text-align: left !important;
+			float: unset !important;
+		}
+	}
+
+	.table-kv {
+		width: calc(100% - 24px) !important;
+		font-size: 16px !important;
+		margin-right: 12px !important;
+		margin-left: 12px !important;
+
+		.kv-row {
+
+			&::after {
+				clear: both;
+			}
+
+			&::before {
+				content: " ";
+				display: table;
+			}
+
+			// &:first-child {
+			// 	padding-top: 0;
+			// }
+			display: block;
+			padding-top: .9em;
+
+			.col-key {
+				float: left;
+				padding-right: .5em;
+				color: #878c92;
+			}
+
+			.col-value {
+				float: right;
+				padding-left: .5em;
+				text-align: right;
+				color: #55595e !important;
+			}
+
+			.col-rule {
+				display: block;
+				overflow: hidden;
+				margin: 0.65em 0 0;
+				border-bottom: 1px dotted #afafaf;
+			}
+		}
+	}
+
+	.scroll-content {
+		background-color: white !important;
+		margin-bottom: 108px !important;
+	}
+
+	.card-ios .item-ios.item-block .item-inner {
+		border-bottom: 0.55px solid #c8c7cc !important;
+	}
+
+    .edit-review-title{
+        font-weight: bold;
+        font-size: 1.4rem !important;
+		display: block;
+		text-align: right !important;
+	}
+
+	.footer-modal-buttons {
+		background-color: #ececec !important;
+	}
+
+}

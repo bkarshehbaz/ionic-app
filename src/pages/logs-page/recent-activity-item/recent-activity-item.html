@@ -1,0 +1,84 @@
+<ion-grid no-padding>
+
+    <ion-row no-padding align-items-start>
+
+		<!-- col-md-4 col-lg-4 col-xl-4 -->
+        <ion-col class="ra-item-col" fixed col-12
+                 *ngFor="let recentActivity of recentActivities;let i=index; trackBy: trackById"
+                 [hidden]=" (min + i) > myLimit || recentActivity?.show === false">
+
+            <!-- <span *ngIf="recentActivity && recentActivity?.show !== false && (min + i) < myLimit">  -->
+			<ion-item class="raitem" (click)="onOptionClicked($event, recentActivity)"
+					  *ngIf="recentActivity && recentActivity?.show !== false && (min + i) < myLimit"
+					  [style.border-color]="recentActivity.color">
+
+				<ion-row>
+					<ion-col class="column-details" col-95>
+						<h2 class="no-margin" item-start [ngClass]="recentActivity.recentActivityID + ''">
+							{{ recentActivity.message }}
+						</h2>
+						<!-- <span style="position: relative;left: 65%;color: red;">
+							{{ (recentActivity?.recentActivityID + "") | slice:-4 }}
+						</span> -->
+					</ion-col>
+
+					<ion-col class="ticket-number" col-25 text-right align-self-center>
+						<button *ngIf="recentActivity.currentTicketID" disabled color='danger' ion-button small no-margin outline>
+							{{ recentActivity.ticketNumber }}
+						</button>
+						<span>{{ recentActivity.activityTimeStampFmt }}</span>
+					</ion-col>
+				</ion-row>
+
+<!--
+				<ion-row>
+					<ion-col col-9>
+						<span>
+							{{
+								recentActivity.userID
+								? (recentActivity.userID | userFLName)
+								: ( recentActivity.currentTicketID | customerFullname ) + " (customer)"
+							}}
+						</span>
+					</ion-col>
+
+					<ion-col class="ticket-number" col-3 text-right align-self-center>
+						<span>{{ recentActivity.activityTimeStamp | moment }}</span>
+					</ion-col>
+				</ion-row> -->
+
+				<!-- <ion-col class="ticket-number" col-3 text-right align-self-center> -->
+					<!-- </ion-col> -->
+				<!-- <h3>Don't Know What To Do!</h3> -->
+				<!-- <p>I've had a pretty messed up day. If we just...</p> -->
+
+				<!-- <h3 [innerHtml]="recentActivity?.message"></h3>
+
+				<p [innerHTML]="recentActivity?.time"></p>
+				<button *ngIf="noOptions == true"
+						(click)="onOptionClicked($event, recentActivity)"
+						clear
+						ion-button>
+
+					<ion-icon name="more"></ion-icon>
+				</button> -->
+
+			</ion-item>
+
+			<!-- <p style="margin-top: 1px;text-align: right;padding-right: 12px;">
+					<span>
+						{{
+							recentActivity.userID
+							? (recentActivity.userID | userFLName)
+							: ( recentActivity.currentTicketID | customerFullname ) + " (customer)"
+						}}
+					</span>
+
+					<span>{{ recentActivity.activityTimeStamp | moment }}</span>
+			</p> -->
+
+        </ion-col>
+
+    </ion-row>
+
+</ion-grid>

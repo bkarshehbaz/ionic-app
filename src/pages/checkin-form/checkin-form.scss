@@ -1,0 +1,261 @@
+car-step, customer-step {
+    ion-item {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        border-bottom: 0.55px solid #c8c7cc !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+        width: calc(100% - 24px) !important;
+
+        ion-icon {
+            position: absolute;
+            right: 0px !important;
+            bottom: 0px !important;
+            margin: 0px !important;
+            font-size: 1.6rem !important;
+            color: #c8c7cc !important;
+        }
+
+        ion-input[disabled]{
+            input{
+                opacity: 1 !important;
+            }
+        }
+
+        .item-inner{
+            padding-right: 0px !important;
+        }
+
+    }
+}
+// checkin-form {
+//     .busymode {
+//         .fixed-content, .scroll-content {
+//             margin-top: 60px !important; 
+//             margin-bottom: 113px !important;
+//         }
+//     }
+//     .notbusymode {
+//         .fixed-content, .scroll-content {
+//             margin-top: 140px !important;
+//             margin-bottom: 113px !important;
+//         }
+//     }
+// }
+
+checkin-form, car-step, customer-step, car-photos-step {
+
+	ion-navbar {
+		&.native {
+			min-height: 140px !important;
+
+			.progress-wrapper-row {
+				top: 45px;
+			}
+		}
+		&.not-native {
+			min-height: 130px !important;
+
+			.progress-wrapper-row {
+				top: 35px;
+			}
+		}
+	}
+
+	.progress-wrapper-row {
+		width: 100vw;
+		position: absolute;
+		left: 0;
+		// top: 35px;
+
+		.progress-wrapper-div {
+			position: relative;
+			padding-left: 16px;
+			width: 80px;
+			height: 80px;
+
+			span {
+				position: absolute;
+				// background-color: red;
+				width: 100%;
+				text-align: center;
+				top: 32px;
+				height: 16px;
+				color: white;
+			}
+		}
+
+		round-progress {
+			width:80px !important;
+			height:80px !important;
+			// background-color: rgba(255, 0, 0, 0.5);
+		}
+
+		.step-titles {
+			padding-right: 16px;
+
+			.next-step {
+				margin: 0;
+			}
+			.current-step {
+                margin-top: 0 !important;
+				margin-bottom: 0.4rem;
+			}
+			.current-step, .next-step {
+				// margin: 0;
+				padding-right: 8px;
+				text-align: right;
+				color:white;
+			}
+		}
+
+	}
+
+	// .scroll-content{
+	// 		top:-56px !important;
+	// 		padding-top: 60px !important;
+	// }
+	.hide-header{
+			transition : top 0.25s ease;
+			top: -56px;
+	}
+	.show-header{
+			transition : top 0.25s ease;
+			top: 0px;
+	}
+
+    .button-small-ios{
+        height: 2.8em !important;
+        border-radius: 5px !important;
+    }
+
+	.applyFooter{
+		button[disabled]{
+			pointer-events: all !important;
+		}
+	}
+
+    // NOTE: this causes the buttons to be hidden, it only happened in EditCustomer. Big time.
+    .scroll-content{
+        -webkit-overflow-scrolling: unset !important;
+        // -webkit-overflow-scrolling: touch !important;
+    }
+
+    input{
+        text-overflow: ellipsis !important;//NOTE: added 5/7/17
+    }
+
+    .list-ios .item-block .item-inner {
+        border-bottom-width: 0 !important;
+    }
+
+	.disabled{
+        opacity: 0.55 !important;
+	}
+
+    .roomNumber-disabled {
+
+        ion-label{
+			// color: red;
+            opacity: 0.4 !important;
+		}
+
+		input {
+			pointer-events: none !important;
+		}
+    }
+
+    $segment-button-ios-toolbar-font-size: 1.5rem;
+    .segment-activated, .segment-button {
+        background-color: #f53d3d !important;
+        color: white !important;
+    }
+
+    ion-list{
+        margin-bottom: 15px !important;
+    }
+
+    .carphotos{
+        position: fixed;
+        bottom: 112px !important;
+        width: 100%;
+        p{
+          text-align: center;
+        }
+    }
+
+    ion-buttons {
+        order: 1
+    }
+
+    // #progressbar {
+    //   padding: 0px;
+    //   /*margin-bottom: 30px;*/
+    //   margin-top: 10px !important;
+    //   margin-bottom: 0px !important;
+    //   text-align:center !important;
+    //   overflow: hidden !important;
+    //   /*CSS counters to number the steps*/
+    //   counter-reset: step;
+    // }
+
+    // #progressbar li {
+    //   width:33%;
+    //   list-style-type: none;
+    //   text-transform: uppercase;
+    //   font-size: 12px;
+    //   float: left;
+    //   position: relative;
+    // }
+
+    // #progressbar li:before {
+    //   content: counter(step);
+    //   counter-increment: step;
+    //   width: 40px;
+    //   line-height: 40px;
+    //   display: block;
+    //   font-size: 20px;
+    //   color: #333;
+    //   background: lightgrey !important;
+    //   border-radius: 20px;
+    //   margin: 0 auto 5px auto;
+    // }
+
+    // #progressbar li:after {
+    //   content: '';
+    //   width: 100%;
+    //   height: 2px;
+    //   background: #CCC !important;
+    //   position: absolute;
+    //   left: -50%;
+    //   top: 18px;
+    //   z-index: -1; /*put it behind the numbers*/
+    // }
+
+    // #progressbar li:first-child:after {
+    //   /*connector not needed before the first step*/
+    //   content: none;
+    // }
+    // #progressbar li.active:before, #progressbar li.active:after{
+    //   background: #32db64 !important;
+    //   color: white;
+    // }
+
+    ion-label{
+        overflow: visible;
+    }
+
+    .add-car-buttons ion-icon{
+        font-size: xx-large !important;
+        position: relative;
+        width: 75%;
+        left: 12.5%;
+        color: #387ef5 !important;
+    }
+
+    .add-car-buttons h6{
+        text-align: center;
+        color: #387ef5 !important;
+    }
+
+}

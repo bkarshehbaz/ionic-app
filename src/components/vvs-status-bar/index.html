@@ -1,0 +1,13 @@
+<span class="myhost">
+{{ env == "prod" ? "" : (env + " - ") }}
+<!-- <span class="ablystate" [ngClass]="vvsApp?.ably?.state"> -->
+<span>
+	{{
+		vvsApp?.ably?.state == "connected"
+		? "online"
+		: vvsApp?.ably?.state == "disconnected"
+		? "offline"
+		: vvsApp?.ably?.state
+	}}
+</span>
+</span>

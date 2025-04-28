@@ -1,0 +1,59 @@
+home {
+
+	ion-content {
+		background-color: #f8f8f8 !important;
+	}
+
+	.search-button {
+		font-size: 14px !important;
+		top: 0px;
+		margin-right: 5px !important;
+		margin-left: 10px !important;
+	}
+
+	.segment-button:not(.segment-activated) {
+		background-color: #fff !important;
+	}
+
+    // [name="md-information-circle"]{
+    //     font-size: 2.6rem !important;
+    //     margin-right: 5px !important;
+    // }
+
+    // // NOTE: this causes the buttons to be hidden, it only happened in EditCustomer. Big time.
+    // .scroll-content{
+    //     overflow-y: auto !important; /* has to be scroll, not auto */
+    //
+    //     -webkit-overflow-scrolling: touch !important;
+    //     // -webkit-overflow-scrolling: touch !important;
+    // }
+
+    // .scroll-content{
+    //     overflow-y: hidden !important;
+    // }
+    // .scroll-content::before, .scroll-content::after {
+    //     position: absolute !important;
+    //     width: 1px !important;
+    //     height: 1px !important;
+    //     content: "" !important;
+    // }
+    //
+    //
+    // .scroll-content::before{
+    //     bottom: -1px !important;
+    // }
+    //
+    // .scroll-content::after{
+    //     top: -1px !important;
+    // }
+    //
+    // .vvs-content{
+    //     overflow-y: scroll !important;
+    //     height: calc(100vh - 120px) !important;
+    // }
+
+    // ion-thumbnail{
+    //     margin: 0px !important;
+    // }
+
+}

@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "types": [],
+        "allowUnreachableCode": false,
+        "allowSyntheticDefaultImports": true,
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": false,
+        "noUnusedLocals":false,
+        "noUnusedParameters":false,
+        "lib": [
+		  "dom",
+		  "es6",
+          "es2016"
+        ],
+        "module": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "target": "es5",
+        "skipLibCheck": true,
+        "removeComments": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "src/**/*.spec.ts",
+        "e2e/**/*.e2e-spec.ts",
+        "src/**/*.e2e-class.ts"
+    ],
+    "compileOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

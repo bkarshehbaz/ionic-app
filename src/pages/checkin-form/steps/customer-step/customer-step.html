@@ -1,0 +1,134 @@
+<ion-grid>
+    <ion-row>
+        <ion-col col-6>
+            <button id="scan-ticket" round (click)="startScanner('ticket')" ion-button small full>
+                <i style='font-size:x-large;' class="fa fa-qrcode" aria-hidden="true"></i>
+                &nbsp;&nbsp;&nbsp;Scan Ticket
+            </button>
+        </ion-col>
+
+        <ion-col col-6>
+            <button id="scan-id" round (click)="startScanner('id')" ion-button small full icon-right>
+                Scan ID&nbsp;&nbsp;&nbsp;
+                <i style='font-size:x-large;' class="fa fa-id-card-o" aria-hidden="true"></i>
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<form [formGroup]="myForm">
+
+    <ion-list>
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+                <ion-col col-6>
+                    <ion-item
+                        [ngClass]="getValidClass('ticketNumber')"><!-- [class.active]="focus === 'ticketNumber'" (touchend)="setFocus('ticketNumber')">-->
+                        <ion-label floating>Ticket Number<ast></ast></ion-label>
+                        <ion-input formControlName="ticketNumber"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" max="5" maxlength="5"
+                            type="tel">
+                        </ion-input>
+                    </ion-item>
+                    <p class="error-message danger" *ngIf="f.ticketNumber.errors && f.ticketNumber.touched">
+                        {{ _f.ticketNumber?.errors?.ticketExists }}
+                    </p>
+
+                    <!-- <span>This is required</span> -->
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('ticketTypeName')" class="vvs-disabled"
+                        (click)="presentSelectPopover($event)">
+                        <ion-label floating>Ticket Type<ast></ast></ion-label>
+                        <ion-input formControlName="ticketTypeName"></ion-input>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+                <ion-col col-6>
+                    <ion-item
+                        [ngClass]="getValidClass('confirmation_number')"><!-- [class.active]="focus === 'ticketNumber'" (touchend)="setFocus('ticketNumber')">-->
+                        <ion-label floating>Reservation Number</ion-label>
+                        <ion-input formControlName="confirmation_number" (keyup)="changeReservationNo($event)"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="6" minlength="6"
+                            max="10" maxlength="10" type="tel">
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item mode="ios"
+                        [ngClass]="getValidClass('roomNumber') + (f.roomNumber.disabled ? ' roomNumber-disabled' : '') ">
+                        <ion-label floating>Room Number</ion-label>
+                        <ion-input formControlName="roomNumber" (keyup)="changeRoomNo($event)" min="3" minlength="3"
+                            max="6" maxlength="6" type="text">
+                        </ion-input>
+
+                    </ion-item>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+
+                <ion-col col-6>
+                    <ion-item
+                        [ngClass]="getValidClass('customerFirstName') + ' ' + (f.customerFirstName.valid && f.customerFirstName.value?.length == 0 ? 'empty-but-optional' : '') ">
+                        <ion-label floating>First Name<ast *ngIf="!busyMode"></ast></ion-label>
+                        <ion-input formControlName="customerFirstName" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('customerLastName')">
+                        <ion-label floating>Last Name<ast></ast></ion-label>
+                        <ion-input formControlName="customerLastName" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+
+
+
+                <ion-col col-6>
+                    <!-- <ion-item [ngClass]="getValidClass('customerPhone') + ' ' + (f.customerPhone.valid && f.customerPhone.value?.length == 0 ? 'empty-but-optional' : '') "> -->
+                    <ion-item [ngClass]="getValidClass('customerPhone')">
+                        <!-- <ion-label floating>Phone Number<ast *ngIf="!busyMode && f?.isHotel?.value == '1'"></ast></ion-label> -->
+                        <ion-label floating>Phone Number<ast></ast></ion-label>
+                        <ion-input (ngModelChange)="onChange($event)" formControlName="customerPhone" type="tel">
+                        </ion-input>
+                    </ion-item>
+                    <!-- <p class="error-message danger" *ngIf="f.customerPhone.errors && f.customerPhone.touched">
+					{{ f.customerPhone?.errors?.phoneExists }}
+				</p> -->
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item class="vvs-disabled" [ngClass]="getValidClass('eventName')"
+                        (click)="presentCompanySelectPopover($event)">
+                        <ion-label floating>Event</ion-label>
+                        <ion-input formControlName="eventName"></ion-input>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+
+                <!-- <ion-col col-12>
+                    <ion-item [ngClass]="getValidClass('Email')">
+                        <ion-label floating>Email<ast></ast></ion-label>
+                        <ion-input formControlName="Email" type="text"></ion-input>
+                    </ion-item>
+                </ion-col> -->
+
+            </ion-row>
+        </ion-grid>
+
+    </ion-list>
+</form>

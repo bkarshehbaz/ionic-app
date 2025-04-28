@@ -1,0 +1,73 @@
+<ion-menu [content]="content" swipeEnabled="false">
+
+    <ion-header>
+
+        <ion-item class="menu-user-item" *ngIf="loginUser">
+            <ion-icon name="person" item-left></ion-icon>
+            <h2> {{loginUser?.userFirstName}} {{loginUser?.userLastName}}</h2>
+            <strong *ngIf="loginUser?.username">{{ loginUser?.username}}@{{loginUser?.CurrentProperty?.propertyName }}</strong>
+
+           
+        </ion-item>
+     
+    
+      
+
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <ion-icon [name]="p.icon" item-left></ion-icon>
+                {{p.title}}
+            </button>
+
+
+            <!-- <ion-item>
+                <ion-label>Busy Mode</ion-label>
+                <ion-toggle (ngModelChange)="toggleBusyMode($event)" [(ngModel)]="busyMode" [ngModelOptions]="{standalone: true}"></ion-toggle>
+            </ion-item> -->
+
+            <!-- <button ion-item *ngFor="let p of pages | slice: 2: 3" (click)="openPage(p)">
+                <ion-icon [name]="p.icon" item-left></ion-icon>
+                {{p.title}}
+            </button> -->
+
+            
+        </ion-list>
+      
+        <p style="position: absolute;left:5px;bottom: 0;color: #578CA9;">
+            {{ env.CURRENT_CHANNEL[0]?.toLowerCase() }}{{ env?.CURRENT_ENV[0]?.toLowerCase() }}{{ env?.git?.short }}
+        </p>
+</ion-content>
+
+</ion-menu>
+
+<ion-nav #content main [root]="rootPage" [swipeBackEnabled]="false"></ion-nav>
+
+<div *ngIf="(vvsApp.loadingObserver | async)?.show" (click)="vvsApp.dismissLoading('app');" class="loading-ios">
+    <!-- <ion-backdrop (click)="vvsApp.loadingService.next({show: false})" style="opacity: 0.3;"></ion-backdrop> -->
+    <div class="loading-wrapper">
+        <ion-spinner></ion-spinner>
+        <div class="loading-content">&nbsp;&nbsp;{{(vvsApp.loadingObserver | async)?.content}}</div>
+    </div>
+</div>
+
+<!-- <ion-loading></ion-loading> -->
+<!-- <div class="loading-ios ion-loading">
+    <div class="loading-wrapper" style="opacity: 1; transform: scale(1);">
+        <div class="loading-spinner">
+            <ion-spinner></ion-spinner>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <div class="ion-loading">
+    <div class="loading-wrapper" (click)="vvsApp.loadingService.next(false)" *ngIf="true" id="vvs-loading">
+        <div class="loading-spinner">
+            <ion-spinner></ion-spinner>
+            <p>Loading...</p>
+        </div>
+    </div>
+</div> -->

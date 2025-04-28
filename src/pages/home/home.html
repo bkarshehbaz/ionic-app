@@ -1,0 +1,94 @@
+<ion-header>
+
+    <ion-navbar [color]="'primary'" no-border-bottom>
+        <button ion-button menuToggle>
+             <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>
+            <!-- {{title}} -->
+            <!-- <div class="svg" [innerHTML]="logo_svg"></div> -->
+            <img style="width: 40px; vertical-align: middle;" src="/assets/navbar_logo.png"/>
+            <!-- <img src="/assets/VVS_APPLEICON_6(SPOTLIGHT).png"/> -->
+        </ion-title>
+
+        <ion-buttons end>
+
+            <!-- <button style="padding-right: 10px;" (click)="sortAll()" ion-button>
+                <ion-icon name="md-information-circle"></ion-icon>
+            </button> -->
+
+            <button style="padding-right: 10px;" (click)="presentLegendPopover($event)" ion-button>
+                <ion-icon name="md-information-circle"></ion-icon>
+            </button>
+
+            <button class="search-button" (click)="vvsApp.presentSearchModal()" ion-button icon-only>
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="tab">
+            <ion-segment-button value="staged" >Staged</ion-segment-button>
+            <ion-segment-button value="pull"   >Pull</ion-segment-button>
+            <ion-segment-button value="allcars">
+                <span (click)="tab == 'allcars' && sortAll()">
+                    <span style="vertical-align: top;">
+                        All Cars
+                    </span>
+                    <ion-icon style="vertical-align: super;" [name]="all_cars_order == 'desc' ? 'arrow-down' : 'arrow-up'"></ion-icon>
+                </span>
+            </ion-segment-button>
+            <ion-segment-button value="mycars" >My Cars</ion-segment-button>
+            <ion-segment-button value="busycars" >Busy</ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content no-bounce>
+
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content [refreshingText]="''" pullingText="Pull to refresh">
+							   <!-- [refreshingText]="'Refreshing... \bLast refreshed: ' + (vvsApp.lss.lastSync | relativeTime)"> -->
+		</ion-refresher-content>
+	</ion-refresher>
+
+    <div class="vvs-content" *ngIf="homeActive === true">
+        <div [ngSwitch]="tab">
+
+			<ticket-item-view *ngSwitchCase="'staged'"
+							  [noContentMsg]="'No Staged Cars'"
+                              [tickets]="tabs.staged"
+                              [type]="'staged'">
+            </ticket-item-view>
+
+            <ticket-item-view *ngSwitchCase="'pull'"
+							  [noContentMsg]="'No Pull Cars'"
+                              [tickets]="tabs.pull"
+                              [type]="'pull'">
+            </ticket-item-view>
+
+            <ticket-item-view *ngSwitchCase="'allcars'"
+							  [noContentMsg]="'No Cars'"
+                              [tickets]="tabs.allcars"
+                              [type]="'all'">
+            </ticket-item-view>
+
+            <ticket-item-view *ngSwitchCase="'mycars'"
+							  [noContentMsg]="'No Park Cars'"
+                              [tickets]="tabs.mycars"
+                              [type]="'parked'">
+            </ticket-item-view>
+
+            <ticket-item-view *ngSwitchCase="'busycars'"
+                              [noContentMsg]="'No Cars'"
+                              [tickets]="tabs.busycars"
+                              [type]="'busy'">
+            </ticket-item-view>
+
+        </div>
+    </div>
+
+</ion-content>

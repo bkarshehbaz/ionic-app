@@ -1,0 +1,14 @@
+export * from "./car.interface";
+// export * from "./company-arrival.interface";
+export * from "./calendar-event";
+export * from "./calendar-event-type";
+export * from "./current-ticket.interface";
+export * from "./customer.interface";
+// export * from "./event-party.interface";
+export * from "./park-area.interface";
+export * from "./park-location.interface";
+export * from "./recent-activity-type.interface";
+export * from "./recent-activity.interface";
+export * from "./ticket-sequence.interface";
+export * from "./ticket-type.interface";
+export * from "./transaction.interface";

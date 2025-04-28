@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title>
+            Please confirm payment details for your parking session:
+        </ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid id="content-grid">
+        <keyvalue-row [lWidth]="6" [rWidth]="6" key="Payment Total" [value]="data?.paymentTotal"></keyvalue-row>
+        <keyvalue-row [lWidth]="6" [rWidth]="6" key="Processing fees" [value]="data?.processingFees"></keyvalue-row>
+        <keyvalue-row [lWidth]="6" [rWidth]="6" key="Method of Payment" [value]="data?.paymentMethod"></keyvalue-row>
+    </ion-grid>
+
+    <ion-list>
+        <ion-item>
+            <ion-label position="stacked" style="font-size: 12px; font-weight: bold; color: #333;">Email Receipt To</ion-label>
+            <ion-input [(ngModel)]="data.email" type="email" style="font-size: 12px;" placeholder="Enter email address" required></ion-input>
+          </ion-item>
+          
+      </ion-list>
+
+</ion-content>
+
+<ion-footer>
+	<modal-footer [presentConfirm]="false" [presentCancelConfirm]="false" 
+                  (submit)="submit($event)" (cancel)="dismiss($event)">
+	</modal-footer>
+</ion-footer>

@@ -1,0 +1,456 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+// royal:      #7e60ff,
+// primary:    #387ef5,
+
+
+  // primary: rgba(218, 67, 54, 1),
+  // primary:    #009688,//teal
+
+// primary:    #578CA9,
+// primary:    #578CA9,
+
+$colors: (
+  primary:    #578CA9,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  newdark: 	  #9E9E9E,
+  dark:       #222,
+  energized:  #ffc527,
+  royal:      #578CA9,
+  subtle:     #444444,
+  vibrant:    rebeccapurple,
+  bright:     #ffc125,
+  white:      #ffffff
+);
+
+$chat-bubble:(
+  background-left: #fea21c,
+  background-right: #8abefa,
+);
+
+login-page {
+	.is-browser {
+		vvs-status-bar .myhost {
+			color: #5c5cff !important;
+		}
+	}
+}
+
+chat {
+
+	chat-bubble {
+		ion-row {
+			padding-top: 8px !important;
+		}
+	}
+	ion-footer {
+		.sent-message-photos-row {
+			// padding-top: 6px !important;
+			margin-bottom: 0px !important;
+			border-radius: 20px !important;
+			padding: 8px !important;
+			margin-right: 8px !important;
+			z-index: 0 !important;
+
+			img {
+				border-radius: 16px !important;
+			}
+		}
+	}
+}
+
+$bar-height:                      36px !default;
+$bar-title-font-size:             17px !default;
+// $content-ios-outer-background: black;
+
+.update-popover-class {
+	.popover-content {
+		top: 200px !important;
+	}
+}
+round-progress {
+	width: 80px !important;
+	height: 80px !important;
+}
+image-viewer {
+	.swiper-slide img {
+		width: stretch !important;
+		height: stretch !important;
+		width: -webkit-fill-available !important;
+		height: -webkit-fill-available !important;
+	}
+}
+
+
+// $toolbar-ios-height: 44px;
+// $tabs-ios-tab-min-height: 44px;
+// $navbar-ios-height: 20px !default;
+// $toolbar-ios-height:
+
+
+ion-content{
+  // top: 44px !important;
+  // padding-bottom: 44px !important;
+  // position: absolute !important;
+}
+
+// ion-content{
+//   top: 93px !important;
+//   bottom: 93px !important;
+// }
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+// Change the checkbox checkmark color
+$checkbox-ios-icon-checkmark-color:   #fff;
+
+// Used to show the status bar for component demos
+$cordova-ios-statusbar-padding:       20px;
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+// Change the toolbar background color
+$toolbar-md-background:                   color($colors, primary);
+
+// Change the color of the segment button text
+$toolbar-md-active-color:                 #fff;
+
+// Change the checkbox checkmark color
+$checkbox-md-icon-checkmark-color:        #fff;
+
+// Used to show the status bar for component demos
+$cordova-md-statusbar-padding:           29px;
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+// Used to show the status bar for component demos
+$cordova-wp-statusbar-padding:           31px;
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+// Roboto font is used by default for Material Design. Noto sans
+// is used by default for Windows.
+
+@import "roboto";
+@import "noto-sans";
+
+
+// Global Styles
+// --------------------------------------------------
+// Styles that apply to the entire app
+
+body, body:hover, body a, body button, body media-switch {
+  // cursor: url('http://ionicframework.com/img/finger.png') 8 8, auto;
+  // cursor: url('assets/images/finger.png') 8 8, auto;
+}
+
+body ion-app {
+  // overflow: visible;
+  // position: absolute;
+}
+
+// ion-page {
+//   display: flex;
+// }
+
+ion-scroll {
+  width: 100%;
+  height: 100%;
+}
+
+.vvs-disabled {
+	input {
+		pointer-events: none !important;
+	}
+}
+
+ion-item-divider {
+	color: #888 !important;
+	font-size: 1.2rem !important;
+}
+
+body.has-scrollbar scroll-content {
+  margin-right: -15px;
+}
+
+body.has-scrollbar ion-menu scroll-content {
+  margin-right: 0;
+}
+
+scroll-content {
+  overflow-y: scroll;
+}
+
+.vvs-image-viewer {
+    .popover-content {
+        overflow: hidden !important;
+        border-radius: 0px !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        min-width: 100vw !important;
+    }
+}
+
+
+.keyboard-opened{
+  overflow:visible !important;
+}
+
+.keyboard-closed{
+  overflow:hidden !important;
+}
+
+.vvs-valid, .valid-true {
+	// border-bottom: 1px solid #32db64 !important;
+	border-bottom: 0.55px solid #32db64 !important;
+}
+
+.vvs-invalid:not(.item-input-disabled), .valid-false {
+	// border-bottom: 1px solid #f53d3d !important;
+	border-bottom: 0.55px solid #f53d3d !important;
+}
+
+.empty-but-optional {
+  border-bottom: 0.55px solid #c8c7cc !important;
+}
+
+
+// .ng-valid {
+//     border-bottom: 1px solid transparent !important;
+// }
+//
+// .ng-invalid {
+//     border-bottom: 1px solid transparent !important;
+// }
+
+
+// .ion-arrow-return-left,.ion-arrow-return-right{ display: inline-block; font-family: "Ionicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+//
+// .ion-arrow-return-left:before { content: "\f265"; }
+// .ion-arrow-return-right:before { content: "\f266"; }
+
+
+// App iOS Styles
+// --------------------------------------------------
+// iOS only styles can go here
+
+.ios {
+
+  // // iOS Status Bar
+  // //---------------------------
+  // img#ios-only {
+  //   display: block !important;
+  //   position: absolute;
+  //   background-color: transparent;
+  //   padding: 5px 0;
+  //   top: 0px;
+  //   width: 100%;
+  //   height: auto;
+  //   z-index: 999;
+  // }
+  //
+  // .tabs-icon-text tabbar {
+  //   .tab-button[aria-selected=true],
+  //   .tab-button:hover:not(.disable-hover) {
+  //     color: #7e60ff;
+  //   }
+  // }
+
+}
+
+
+// App Material Design Styles
+// --------------------------------------------------
+// Material Design only styles can go here
+
+.md {
+
+  // // Android Status Bar
+  // //---------------------------
+  // img#md-only {
+  //   display: block !important;
+  //   position: absolute;
+  //   background-color: transparent;
+  //   top: 0px;
+  //   width: 100%;
+  //   height: auto;
+  //   z-index: 999;
+  // }
+  //
+  // .tabs-icon-text ion-title div.toolbar-title {
+  //   color: #fff !important;
+  // }
+  //
+  // .tabs-icon-text tabbar {
+  //   background-color: #7e60ff;
+  //
+  //   a {
+  //     color: #fff !important;
+  //   }
+  // }
+  //
+  // .tabs-icon-text tab-highlight {
+  //   color: #fff;
+  //   background-color: #fff;
+  // }
+
+}
+
+
+// App Windows Styles
+// --------------------------------------------------
+// Windows only styles can go here
+
+.wp {
+  //
+  // // Windows Status Bar
+  // //---------------------------
+  // img#wp-only {
+  //   display: block !important;
+  //   position: absolute;
+  //   background-color: transparent;
+  //   padding: 5px 0;
+  //   top: 0px;
+  //   width: 100%;
+  //   height: auto;
+  //   z-index: 999;
+  // }
+  //
+}
+
+
+
+// // Ionic Variables and Theming. For more info, please see:
+// // http://ionicframework.com/docs/v2/theming/
+// $font-path: "../assets/fonts";
+//
+// @import "ionic.globals";
+//
+//
+// // Shared Variables
+// // --------------------------------------------------
+// // To customize the look and feel of this app, you can override
+// // the Sass variables found in Ionic's source scss files.
+// // To view all the possible Ionic variables, see:
+// // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+//
+//
+//
+//
+// // Named Color Variables
+// // --------------------------------------------------
+// // Named colors makes it easy to reuse colors on various components.
+// // It's highly recommended to change the default colors
+// // to match your app's branding. Ionic uses a Sass map of
+// // colors so you can add, rename and remove colors as needed.
+// // The "primary" color is the only required color in the map.
+//
+// $colors: (
+//   primary:    #387ef5,
+//   secondary:  #32db64,
+//   danger:     #f53d3d,
+//   light:      #f4f4f4,
+//   dark:       #222
+// );
+//
+//
+// // App iOS Variables
+// // --------------------------------------------------
+// // iOS only Sass variables can go here
+//
+//
+//
+//
+// // App Material Design Variables
+// // --------------------------------------------------
+// // Material Design only Sass variables can go here
+//
+//
+//
+//
+// // App Windows Variables
+// // --------------------------------------------------
+// // Windows only Sass variables can go here
+//
+//
+//
+//
+// // App Theme
+// // --------------------------------------------------
+// // Ionic apps can have different themes applied, which can
+// // then be future customized. This import comes last
+// // so that the above variables are used and Ionic's
+// // default are overridden.
+//
+// @import "ionic.theme.default";
+//
+//
+// // Ionicons
+// // --------------------------------------------------
+// // The premium icon font for Ionic. For more info, please see:
+// // http://ionicframework.com/docs/v2/ionicons/
+//
+// @import "ionicons";
+//
+//
+// // Fonts
+// // --------------------------------------------------
+//
+// @import "roboto";
+// @import "noto-sans";

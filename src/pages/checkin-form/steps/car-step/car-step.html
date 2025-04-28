@@ -1,0 +1,148 @@
+<ion-grid *ngIf="!editMode">
+    <!-- <ion-row *ngIf="vvsApp?.user?.username != 'estrel2' && vvsApp?.user?.username != 'estrel' && vvsApp?.user?.username != 'smooth' && vvsApp?.user?.username != 'vvs';else betaRow">
+        <ion-col col-2></ion-col>
+        <ion-col col-8>
+            <button round (click)="scanManateeVIN()" ion-button full id="scan-vin" small icon-left>
+				<ion-icon name="barcode"></ion-icon>
+				Scan VIN Number
+            </button>
+		</ion-col>
+
+        <ion-col col-2></ion-col>
+	</ion-row> -->
+
+    <!-- <ng-template #betaRow> -->
+    <ion-row>
+
+        <ion-col col-6>
+            <button round (click)="scanTag()" ion-button full id="scan-tag" small icon-left>
+                <ion-icon name="barcode"></ion-icon>
+                Plate Tag Photo
+            </button>
+        </ion-col>
+
+        <ion-col col-6>
+            <button round (click)="scanManateeVIN()" ion-button full id="scan-vin" small icon-left>
+                <ion-icon name="barcode"></ion-icon>
+                Scan VIN Number
+            </button>
+        </ion-col>
+
+    </ion-row>
+    <!-- </ng-template> -->
+
+</ion-grid>
+
+<form [formGroup]="myForm">
+    <ion-list mode="ios">
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+
+                <!-- <ion-col col-6>
+                <ion-item class="vin-number disabled vvs-disabled" [ngClass]="getValidClass('vinNumber')">
+                    <ion-label floating>Vin Number</ion-label>
+                    <ion-input mode="ios" formControlName="vinNumber" type="text"></ion-input>
+                    <ion-spinner *ngIf="isGettingVINFromServer === true" name="ios-small" item-right></ion-spinner>
+                </ion-item>
+            </ion-col> -->
+
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('licensePlate')">
+                        <ion-label floating>License Plate<ast *ngIf="currentProperty === '1000000000'"></ast>
+                            </ion-label>
+                        <ion-input mode="ios" formControlName="licensePlate" type="text"></ion-input>
+                        <!-- <ion-spinner *ngIf="isGettingVINFromServer === true" name="ios-small" item-right></ion-spinner> -->
+                    </ion-item>
+                </ion-col>
+
+                <!-- <ion-col id="fueltype-item" align-self-stretch col-6>
+                <ion-item style="height:100% !important;">
+                    <div class="switch-field">
+                        <div class="floating switch-title">Fuel Type {{ f.fueltype.value == 1 ? 'y' : 'n' }}</div>
+                        <div class="switch-custom-wrapper">
+                            <input value="0" type="radio" id="switch_left" formControlName="fueltype"/>
+                            <label (click)="setFueltype($event, '0')" [class.is-checked]="f.fueltype.value == 0" for="switch_left">Gas</label>
+
+                            <input value="1" type="radio" id="switch_right" formControlName="fueltype"/>
+                            <label (click)="setFueltype($event, '1')" [class.is-checked]="f.fueltype.value == 1" for="switch_right">Electric</label>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-col> -->
+
+                <ion-col id="transmission-item" align-self-stretch col-6>
+                    <ion-item style="height:100% !important;">
+                        <div class="switch-field">
+                            <div class="floating switch-title">Transmission Style</div>
+                            <!-- <div>{{ f.manual.value == 1 ? 'm' : 'a' }}</div> -->
+                            <div class="switch-custom-wrapper">
+                                <input value="0" type="radio" id="switch_left" formControlName="manual" />
+                                <label (click)="setTransmissionStyle($event, '0')"
+                                    [class.is-checked]="f.manual.value == 0" for="switch_left">Auto</label>
+
+                                <input value="1" type="radio" id="switch_right" formControlName="manual" />
+                                <label (click)="setTransmissionStyle($event, '1')"
+                                    [class.is-checked]="f.manual.value == 1" for="switch_right">Manual</label>
+                            </div>
+                        </div>
+                    </ion-item>
+
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('makeName')" #makeItem class="vvs-disabled"
+                        (click)="presentSearchablePopover($event,'make')">
+                        <ion-label floating>Make<ast></ast></ion-label>
+                        <ion-input formControlName="makeName" readonly type="text"></ion-input>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('modelName')" #modelItem class="vvs-disabled"
+                        (click)="presentSearchablePopover($event,'model')">
+                        <ion-label floating>Model<ast></ast></ion-label>
+                        <ion-input formControlName="modelName" readonly type="text"></ion-input>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid no-margin no-padding>
+            <ion-row no-margin no-padding>
+                <ion-col col-6>
+                    <ion-item [ngClass]="getValidClass('carYear')">
+                        <ion-label floating>Year</ion-label>
+                        <ion-datetime (ngModelChange)="onCarYearSelected($event)" formControlName="carYear"
+                            displayFormat="YYYY" #dateTimePicker>
+                        </ion-datetime>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+
+                <ion-col col-6>
+                    <ion-item class="vvs-disabled" (click)="presentColorPopover($event)"
+                        [ngClass]="getValidClass('colorName')">
+                        <ion-label floating>Color<ast></ast></ion-label>
+                        <ion-input formControlName="colorName" readonly type="text"></ion-input>
+                        <ion-icon name="ios-arrow-down" item-right></ion-icon>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-list>
+
+    <ion-item class="item-electric-box">
+        <ion-label>Is this an electric car?</ion-label>
+        <ion-checkbox formControlName="electric"></ion-checkbox>
+    </ion-item>
+
+</form>

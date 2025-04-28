@@ -1,0 +1,79 @@
+ion-footer {
+
+    background: white !important;
+
+    // .footer-message {
+    //     display: block;
+    //     padding: 15px;
+    //     font-size: 17px;
+    //     font-weight: bold;
+    //     color: rgba(29, 29, 29, 0.69);
+    //     height: 232px;
+
+    //     span {
+    //         margin-top: 8px;
+    //         display: block;
+    //         font-size: 14px;
+    //         font-weight: 400;
+    //     }
+    // }
+}
+
+.mh-car-profile-picture{
+    // width: 60px;
+    // height: 60px;
+    border-radius: 5px !important;
+    width: 76px;
+    height: 76px;
+    overflow: hidden;
+    margin: 0px !important;
+    position: relative;
+
+    img{
+        position: absolute;
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
+        margin: auto;
+        height: auto;
+        width: auto;
+  }
+}
+
+.rcheckin-add-photo {
+    ion-icon {
+        font-size: 35px;
+        margin-top: 45px;
+        margin-left: 34px;
+    }
+}
+
+.add-photos-header {
+    font-size: 17px;
+    font-weight: 500;
+    color: #6f6f6f;
+    padding-left: 15px;
+}
+
+.item-textarea {
+    .item-inner {
+        margin-top: 8px;
+        padding-left: 10px;
+    }
+}
+
+.photo-container {
+    display: flex;
+    justify-content: center;
+
+    ion-icon {
+        font-size: 35px;
+        margin-top: 60px;
+        margin-left: 42px;
+    }
+    
+    .card-ios {
+        width: 100% !important;
+    }
+}

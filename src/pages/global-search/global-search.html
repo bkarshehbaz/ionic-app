@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-navbar color="primary">
+
+        <ion-buttons start>
+            <button navPop start ion-button clear>Close</button>
+		</ion-buttons>
+
+		<ion-searchbar
+			[(ngModel)]="searchInputValue"
+			showCancelButton="true"
+			(ionInput)="doSearch($event)"
+			(ionClear)="onClear($event)"
+			(ionCancel)="onCancel($event)">
+		</ion-searchbar>
+
+		<!-- <ion-buttons end>
+			<button ion-button icon-only>
+				<ion-icon name="options"></ion-icon>
+			</button>
+		</ion-buttons> -->
+
+    </ion-navbar>
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="segment" (ionChange)="onSegmentChange($event)">
+            <ion-segment-button value="ticket">Ticket</ion-segment-button>
+            <ion-segment-button value="recent">Activity</ion-segment-button>
+            <!-- <ion-segment-button value="chat">Chat</ion-segment-button> -->
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [ngClass]="segment" ionScrollEnd="hideKeyboard();">
+    <div [ngSwitch]="segment">
+
+		<p class="no-content">{{
+		      tloaded && segment == 'ticket' && tickets?.length == 0 ? "No Tickets Found"
+			: rloaded && segment == 'recent' && recents?.length == 0 ? "No Recent Activities Found" : ""
+		}}</p>
+
+		<ticket-item-view
+			*ngSwitchCase="'ticket'"
+			[tickets]="tickets"
+			[type]="'search'">
+		</ticket-item-view>
+
+		<div *ngSwitchCase="'recent'">
+			<ion-list>
+				<recent-activity-item [recentActivities]="recents"
+									[noOptions]="true"
+									[myLimit]="recentLimit"
+									(onOptionClickEvent)="presentSelectPopover($event)">
+				</recent-activity-item>
+			</ion-list>
+
+			<ion-infinite-scroll [enabled]="recentLimit && recentLimit <= recents?.length" (ionInfinite)="doRecentInfinite($event)">
+				<ion-infinite-scroll-content></ion-infinite-scroll-content>
+			</ion-infinite-scroll>
+		</div>
+
+		<ion-list class="chat-items" *ngSwitchCase="'chat'">
+			<ion-item *ngFor="let chat of chats;">
+				<chat-bubble [classToUse]="chat?.userID != vvsApp?.userID ? 'left' : 'right'"
+							 [searchQuery]="searchTerm$ | async"
+							 [message]="chat">
+				</chat-bubble>
+			</ion-item>
+		</ion-list>
+
+    </div>
+</ion-content>
+
+<!-- <ion-footer>
+	<ion-toolbar>
+		<ion-title>Footer</ion-title>
+	</ion-toolbar>
+</ion-footer> -->
+
+<div *ngIf="loadingObserver | async" (click)="loadingObserver.next(false)" class="loading-ios">
+    <div class="loading-wrapper">
+        <ion-spinner></ion-spinner>
+    </div>
+</div>

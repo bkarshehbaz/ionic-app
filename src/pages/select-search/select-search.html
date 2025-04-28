@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar [color]="'primary'">
+        <ion-title [ngClass]="type">
+            <p> {{ title }} </p>
+        </ion-title>
+        <ion-buttons right>
+            <button (click)="logout()" ion-button>
+               Sign out
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content>
+
+        </ion-refresher-content>
+    </ion-refresher> -->
+
+    <ion-searchbar [(ngModel)]="filter" debounce="300"></ion-searchbar>
+    <ion-list>
+		<ion-item (click)="onPropertySelected(property);"
+				*ngFor="let property of user?.properties | filterListBy : filter : 'propertyName' : 'streetAddress'">
+			<ion-icon name="pin" item-start></ion-icon>
+			<span [innerHtml]="property?.propertyName | highlight : filter"></span>
+			<p [innerHtml]="property?.streetAddress | highlight : filter"></p>
+        </ion-item>
+    </ion-list>
+
+
+    <!-- <ion-spinner class="vss-spinner" *ngIf="isLoadingForTheFirstTime"></ion-spinner> -->
+
+	<vvs-debugger *ngIf="!vvsApp?.user?.username == 'estrel'" [isPage]="false"></vvs-debugger>
+
+    <p style="position: absolute;right:5px;bottom: 0;color: #578CA9;">
+        {{ env.CURRENT_CHANNEL[0]?.toLowerCase() }}{{ env?.CURRENT_ENV[0]?.toLowerCase() }}{{ env?.git?.short }}
+    </p>
+
+</ion-content>

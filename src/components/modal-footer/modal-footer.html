@@ -1,0 +1,42 @@
+<ion-grid margin-top class="footer-modal-buttons">
+    <ion-row>
+        <ion-col col-6>
+            <button (click)="onCancelClick()"
+                    small full round
+                    item-right
+					icon-left
+					outline
+                    class="cancel-button"
+                    ion-button>
+                <ion-icon name="arrow-back"></ion-icon>
+                {{ cancelText }}
+            </button>
+        </ion-col>
+
+        <ion-col col-6>
+            <button (click)="onSubmitClick()"
+					[class.edit-disabled]="disableSubmit == true"
+					[disabled]="disableSubmit == true"
+                    small full round
+                    item-right
+                    icon-right
+                    class="submit-button"
+                    ion-button>
+                Submit
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<div *ngIf="(vvsApp.loadingObserver | async)?.show" (click)="vvsApp.dismissLoading('modal-footer')" class="loading-ios">
+    <!-- <ion-backdrop (click)="vvsApp.loadingService.next({show:false})" style="opacity: 0.3;"></ion-backdrop> -->
+    <div class="loading-wrapper">
+        <ion-spinner></ion-spinner>
+        <div class="loading-content">&nbsp;&nbsp;{{(vvsApp.loadingObserver | async)?.content}}</div>
+    </div>
+</div>
+<!-- <div (click)="isLoading = !isLoading;" *ngIf="isLoading" id="vvs-loading">
+    <ion-spinner></ion-spinner>
+    <p>Loading...</p>
+</div> -->

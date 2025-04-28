@@ -1,0 +1,162 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Check out Car</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background-area">
+
+    <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+            <modal-header [ticket]="ticket" (editTicket)='editTicket()'></modal-header>
+            <modal-details [ticket]="ticket"></modal-details>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+
+            <modal-header [ticket]="ticket" (editTicket)='editTicket()'></modal-header>
+
+            <ion-grid>
+
+                <ion-row class="info-table">
+
+                    <ion-col col-4>
+                        <p>Balance</p>
+                        <p>{{ticket | balance}}</p>
+                    </ion-col>
+
+                    <ion-col col-4>
+                        <p>Rate</p>
+                        <p>&#36;{{ticket.TicketType?.ticketPrice}}/nights</p>
+                    </ion-col>
+
+                    <ion-col col-4>
+                        <p>Status</p>
+                        <p>&#36;{{ticket.TicketType?.ticketPrice}}/nights</p>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+        </ion-card-content>
+
+    </ion-card> -->
+
+    <!-- <span *ngIf="(ticket?.TicketType?.ticketTicketID | isHotel | async) == 1"> -->
+    <span *ngIf="ticket?.TicketType?.isHotel == 1">
+            <ion-card class="card-info-type">
+            <ion-card-content no-padding>
+                <ion-item>
+                    <ion-label floating>Enter Room Number</ion-label>
+                    <!-- <ion-input type="number" [(ngModel)]="ticket.roomNumber"></ion-input> -->
+                    <ion-input type="tel" [formControl]="roomNumberControl" 
+                               onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                               min="3" minLength="3" max="4" maxlength="4" type="tel">
+                    </ion-input>
+                </ion-item>
+                <p class="error-message danger" *ngIf="roomNumberControl?.errors && roomNumberControl?.touched">
+                    {{ isDeparting == "no" && roomNumberControl?.value?.length == 0 ? "" : roomNumberControl?.errors?.roomNumberValid }}
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card class="card-info-type">
+            <ion-card-header>
+                Is customer departing? (Not Returning)
+            </ion-card-header>
+            <ion-card-content>
+                <ion-content class="button-container" no-padding>
+                    <button ion-button 
+                            class="no-button"
+                            [ngStyle]="{
+                              'background-color': getButtonColor('no'),
+                              'color': getTextColor('no')
+                            }" 
+                            (click)="setDeparting('no')">
+                      No
+                    </button>
+                    <button ion-button 
+                            class="yes-button"
+                            [ngStyle]="{
+                              'background-color': getButtonColor('yes'),
+                              'color': getTextColor('yes')
+                            }" 
+                            (click)="setDeparting('yes')">
+                      Yes
+                    </button>
+                </ion-content>
+            </ion-card-content>
+        </ion-card>
+    </span>
+
+    <!-- <span *ngIf="(ticket?.TicketType?.ticketTicketID | isHotel | async) == 0"> -->
+    <span *ngIf="ticket?.TicketType?.isHotel == 0">
+        <ion-card *ngIf="ticket?.Payment?.complete == 0">
+            <ion-card-header>Payment Options</ion-card-header>
+            <ion-card-content>
+                <ion-card-pay-options (refreshView)="ionViewDidEnter()" (canLeave)="setItCanLeave($event)" [fromModal]="true" [showCancel]="false" [ticket]="ticket"></ion-card-pay-options>
+            </ion-card-content>
+        </ion-card>
+
+        <!-- <ion-card>
+            <ion-card-content> -->
+        		<card-notes-photos-map-view *ngIf="ticket?.Payment?.complete == 1" [activeSegment]="'payment'" [config]="config">
+                    
+                </card-notes-photos-map-view>
+            <!-- </ion-card-content>
+        </ion-card> -->
+    </span>
+
+    <!-- <ng-template #isNotHotel2>
+        <ion-card class="not-hotel">
+            <ion-card-content>
+                <ion-item item-border-bottom class="pa-item" (click)="choosePaymentMethod($event)" no-padding>
+                    <ion-label floating>Payment Method</ion-label>
+                    <ion-input disabled [(ngModel)]="paymentType.paymentTypeName"></ion-input>
+                </ion-item>
+            </ion-card-content>
+
+        </ion-card>
+
+        <ion-card class="comp-card" *ngIf="paymentType.paymentTypeShortName == 'COMP'">
+            <ion-card-content>
+                <ion-item [ngClass]="compCodeControl.valid ? 'vvs-valid' : showErrors ? 'vvs-invalid' : ''" item-border-bottom no-padding>
+                    <ion-label floating>Comp Code<ast></ast></ion-label>
+                    <ion-input [formControl]="compCodeControl"></ion-input>
+                </ion-item>
+                <p class="error-message danger" *ngIf="showErrors && compCodeControl?.errors && compCodeControl?.touched">
+                    {{ compCodeControl.errors?.wrongCompCode }}
+                </p>
+
+                <ion-item item-border-bottom no-padding>
+                    <ion-label floating>Add a note</ion-label>
+                    <ion-textarea rows="1" autoResizeTextarea [(ngModel)]="compCodeNote"></ion-textarea>
+               </ion-item>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card class="validation-card" *ngIf="paymentType.paymentTypeShortName == 'VALIDATION'">
+            <ion-card-header>
+                <span>Validation Photo</span>
+                <button (click)="takeValidationPhoto($event)" ion-button small outline>
+                    {{ validationImage ? 'Retake Photo' : 'Add Validation'}}
+                </button>
+            </ion-card-header>
+            <ion-card-content>
+                <img *ngIf="validationImage" [src]="validationImage" />
+            </ion-card-content>
+        </ion-card>
+
+    </ng-template> -->
+
+</ion-content>
+
+<ion-footer>
+    <modal-footer [disableSubmit]="ticket?.TicketType?.isHotel == 1 ? !valid : ticket?.Payment?.complete != 1"
+                  [presentConfirm]="false"
+                  (submit)="presubmit($event)"
+                  (cancel)="dismiss($event)">
+    </modal-footer>
+</ion-footer>

@@ -1,0 +1,35 @@
+.note-list{
+    p {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+
+        max-height: 55px;
+        height: 55px;
+        overflow-y: auto !important;
+        padding-right: 1px;
+    }
+
+    small {
+        display: block !important;
+        padding-bottom: 22px !important;
+    }
+
+    .swiper-container {
+        // height: min-content !important;
+        .slide-zoom {
+            align-self: flex-start !important;
+            padding: 8px 16px !important;
+
+			color: #666;
+            // h3, p, s {
+			// }
+			h3, p {
+				text-align: left;
+			}
+			h3 {
+				font-weight: bold;
+			}
+        }
+    }
+}

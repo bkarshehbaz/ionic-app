@@ -1,0 +1,28 @@
+// import { IOperation } from './operations.type';
+
+// export const CHECKIN_INIT    : IOperation = "CHECKIN_INIT";
+// export const CHECKIN_CANCEL  : IOperation = "CHECKIN_CANCEL";
+// export const CHECKIN         : IOperation = "CHECKIN";
+// export const PARK_INIT       : IOperation = "PARK_INIT";
+// export const PARK            : IOperation = "PARK";
+// export const PARK_CANCEL     : IOperation = "PARK_CANCEL";
+// export const PULL            : IOperation = "PULL";
+// export const PULL_INIT       : IOperation = "PULL_INIT";
+// export const PULL_CANCEL     : IOperation = "PULL_CANCEL";
+// export const PULL_REQUEST    : IOperation = "PULL_REQUEST";
+// export const PAY             : IOperation = "PAY";
+// export const PAY_INIT        : IOperation = "PAY_INIT";
+// export const PAY_CANCEL      : IOperation = "PAY_CANCEL";
+// export const CHECKOUT        : IOperation = "CHECKOUT";
+// export const CHECKOUT_INIT   : IOperation = "CHECKOUT_INIT";
+// export const CHECKOUT_CANCEL : IOperation = "CHECKOUT_CANCEL";
+// export const EDIT            : IOperation = "EDIT";
+// export const CHAT_SELECT     : IOperation = "CHAT_SELECT";
+// export const CHAT_INSERT     : IOperation = "CHAT_INSERT";
+// export const SELECT          : IOperation = "SELECT";
+// export const USERNAMES       : IOperation = "USERNAMES";
+// export const SIGNIN          : IOperation = "SIGNIN";
+// export const SIGNOUT         : IOperation = "SIGNOUT";
+// export const MAKE            : IOperation = "MAKE";
+// export const MODEL           : IOperation = "MODEL";
+// export const CHECK_BALANCE   : IOperation = "CHECK_BALANCE";

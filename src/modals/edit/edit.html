@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title> {{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <customer-step *ngIf=" option == 'customer' " (notify)='onNotify($event)'>
+    </customer-step>
+
+    <car-step *ngIf=" option == 'car' " (notify)='onNotify($event)'>
+    </car-step>
+
+    <car-photos-step *ngIf=" option == 'carnotes' " [clearMode]="true" (notify)='onNotify($event)'>
+    </car-photos-step>
+
+</ion-content>
+
+<ion-footer>
+    <modal-footer [presentConfirm]=" option == 'carnotes' " [disableSubmit]="!nextStatus" (submit)="submit($event)"
+        (cancel)="dismiss($event)">
+    </modal-footer>
+</ion-footer>

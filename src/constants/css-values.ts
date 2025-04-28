@@ -1,0 +1,16 @@
+export const height = "height";
+export const bottom = "bottom";
+export const bcolor = "background-color";
+export const iob = "rgba(158, 158, 158, 0.08)"; //ticket-item-options grey background-color
+export const marginBottom = "margin-bottom";
+export const paddingBottom = "padding-bottom";
+export const keyboardHeight = "keyboardHeight";
+export const textarea = "textarea";
+export const ionFooter = "ion-footer";
+export const base64 = "data:image/jpeg;base64,";
+export const base64_2 = "data:*/*;base64,";
+export const px = "px";
+export const zpx = "0px";
+export const none = "none";
+export const block = "block";
+export const scrollMultiFormContentInitialMarginBotton = 113;

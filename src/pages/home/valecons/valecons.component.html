@@ -1,0 +1,14 @@
+<ion-grid no-padding no-margin>
+	<ion-row justify-content-end no-padding no-margin>
+
+		<ion-col *ngFor="let valecon of valecons;" [ngClass]="valecon.show == true ? 'col-2' : 'col-0' ">
+			<li *ngIf="!valecon.icon" [ngClass]="valecon.class" [style.color]="valecon.color"></li>
+			<img *ngIf="valecon.icon" [src]="valecon.icon" />
+		</ion-col>
+
+		<!--<span>TicketSequence undefined</span>-->
+		<ion-col *ngIf="!_ticket?.TicketSequence?.ticketSequenceID">
+			<ion-icon name="nuclear"></ion-icon>
+		</ion-col>
+	</ion-row>
+</ion-grid>

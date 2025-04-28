@@ -1,0 +1,24 @@
+legends {
+    .micon-ios-manual {
+        margin-bottom: 10px !important;
+    }
+    .micon-ios-moon{
+        margin-right: 0px !important;
+    }
+    ion-list{
+        margin-bottom: 13px !important;
+    }
+    .micon-ios-moon:before{
+        font-size: 4rem !important;
+    }
+    ion-label{
+        font-size: 1.5rem;
+    }
+    li{
+        font-size: 2.5rem;
+    }
+    .item-block{
+        height: 3.5rem !important;
+        min-height: unset !important;
+    }
+}

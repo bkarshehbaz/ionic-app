@@ -1,0 +1,15 @@
+<ion-content style="text-align: center;">
+    <div (click)="close()" class="pins-parent-top"></div>
+    <div class="pins-parent">
+        <div class="pins">
+            <ion-grid>
+                <ion-row>
+                    <ion-col (click)="pickColor(color)" *ngFor="let color of colors" col-3>
+                        <div [ngStyle]="{ 'background-color': color.colorHex }" class="square"></div>
+                        <ion-label no-margin>{{color.colorName}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,63 @@
+ion-card-pay-options{
+    ion-col[col-6]:nth-child(odd) {
+        border-right: 1px solid #696969;
+
+    }
+    ion-row{
+        border-top: 1px solid #696969;
+    }
+}
+// ticket-item-options{
+//     ion-row{
+//         transition: all 200ms;
+//         -webkit-transition: all 200ms;
+//         -webkit-transition-timing-function: ease-out;
+//         transition-timing-function: ease-out;
+//     }
+// }
+
+ion-card-pay-options {
+    i {
+      font-size:3.8rem !important;
+    }
+    h6{
+        // padding-top: 5px !important;
+        padding-top: 0px !important;
+        font-size: 1.1rem !important;
+    }
+    .cancel-row{
+        margin-bottom: -5px !important;
+    }
+}
+ion-card-pay-options, ticket-item-options {
+
+    ion-card-header{
+        padding-bottom: 0px !important;
+    }
+
+    ion-label{
+        margin: 0px !important;
+    }
+
+    button{
+        padding: 0 !important;
+        background-color: transparent !important;
+    }
+
+
+
+
+    .item-inner {
+        text-align: center;
+        padding-right: 0px !important;
+        background: none !important;
+        border-bottom: 0px !important;
+        // color: #437fb3;
+        // color: white;
+        // color: #578CA9;
+        color: #696969 !important
+    }
+
+
+
+}

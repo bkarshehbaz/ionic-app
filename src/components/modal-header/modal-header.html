@@ -1,0 +1,21 @@
+<ion-grid id="header-grid">
+    <ion-row align-items-stretch style="padding-bottom: 5px;">
+
+        <ion-col col-12 no-padding>
+            <ion-grid>
+
+                <ion-row class="customer-name-row" align-items-stretch>
+                    <ion-col col-8>
+                        <h2 text-left class="customer-name">
+                            {{ ticket?.Customer | customerFullname | async }}
+                        </h2>
+                    </ion-col>
+                    <ion-col col-4>
+                        <button disabled color='danger' ion-button small outline> {{ticket?.ticketNumber}}
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-col>
+    </ion-row>
+</ion-grid>

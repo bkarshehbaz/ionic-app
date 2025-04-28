@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button navPop>
+                <span ion-text showWhen="ios">Close</span>
+                <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-slides effect="coverflow" loop="false" [initialSlide]="config?.initialSlideIndex">
+        <ion-slide style="background-color: black">
+        <!-- <ion-slide *ngFor="let image of config?.images" style="background-color: black"> -->
+            <!-- <img-loader [src]="image?.uri || ( vvsApp.getImage(config?.currentTicketID, image?.uid) )"></img-loader> -->
+            <div class="swiper-zoom-container">
+                <img-loader [src]="config.images[config?.initialSlideIndex]?.uri"></img-loader>
+                <!-- <img src="https://media.wired.com/photos/5d09594a62bcb0c9752779d9/master/pass/Transpo_G70_TA-518126.jpg" /> -->
+            </div>
+            <!-- <ion-label>My Label</ion-label> -->
+		</ion-slide>
+    </ion-slides>
+</ion-content>

@@ -1,0 +1,9 @@
+<ion-list no-margin>
+    <ion-list-header>Payment Type</ion-list-header>
+</ion-list>
+
+<ion-content>
+    <h1 text-center>{{ ticket.balance | currency }}</h1>
+    <ion-card-pay-options (close)="close()" (cancel)="close()" [showCancel]="true"
+        [ticket]="ticket"></ion-card-pay-options>
+</ion-content>

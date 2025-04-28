@@ -1,0 +1,36 @@
+valecons {
+
+	.dollar:before {
+		content: '$';
+	}
+
+	.micon-ios-manual {
+		margin-bottom: 2.25px !important;
+	}
+
+	ion-row{
+        ion-col{
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+			align-self: center !important;
+
+			li {
+				list-style-type: none !important;
+				font-size: 17px !important;
+			}
+        }
+	}
+
+	.inbound,.outbound,.na, .is-in, .is-out{
+        // width: 55px !important;
+        display: inline-block !important;
+	}
+
+	.col-2 {
+		@extend [col-2];
+	}
+	.col-0 {
+		display: none !important;
+	}
+
+}

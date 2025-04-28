@@ -1,0 +1,30 @@
+<div tio>
+    <ion-row class="actions-row">
+
+		<ion-col *ngFor="let button of buttons" [ngClass]="button.disabled == true ? 'col-2' : 'col-0' ">
+			<button *ngIf="button.disabled == true && button.hidden != true" (click)="onItemClick(button.action)" ion-item full>
+				<!-- <i class="{{b.i}}" aria-hidden="true"></i> -->
+				<ion-icon name="{{ button.icon }}"></ion-icon>
+				<h6> {{ button.title }}</h6>
+			</button>
+		</ion-col>
+
+		<ion-col col-2>
+			<button (click)="onItemClick('details')" ion-item full>
+				<!-- <i class="{{b.i}}" aria-hidden="true"></i> -->
+				<ion-icon name="ios-information-circle"></ion-icon>
+				<h6>Details</h6>
+			</button>
+		</ion-col>
+
+        <!-- {t: "Details", k: 'details',  i: 'ios-information-circle', d: true} -->
+
+	</ion-row>
+
+	<ion-row class="status-row">
+		<ion-col col-12>
+			<p>{{ statusDescription }}</p>
+			<!-- <marquee behavior="scroll" direction="left">{{ statusDescription }}</marquee> -->
+		</ion-col>
+	</ion-row>
+</div>

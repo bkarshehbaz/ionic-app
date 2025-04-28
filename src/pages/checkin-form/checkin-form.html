@@ -1,0 +1,159 @@
+<ion-header>
+    <ion-navbar [ngClass]="isNative && !formProvider.busyMode ? 'native' : !isNative && !formProvider.busyMode ? 'not-native' : 'busy-mode-navbar'" [color]="'primary'">
+
+      <!--<button *ngIf="!isScanning" ion-button menuToggle>-->
+        <button style="align-self: end;" ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+		<!-- <ion-title style="padding-top: 0px;min-height: 100;margin-left: -70px;margin-top: auto;/* bottom: 4px; */position: relative;">
+			<div class="progress-wrapper" style="position: relative;">
+				<div class="current" style="position: absolute;top: 50%;bottom: auto;left: 17%;transform: translateY(-50%) translateX(-50%);font-size: 18px;">
+					{{ step.index + 1 }} of 3
+				</div>
+				<round-progress [color]="'#32db64'" style="width:80px !important;height:80px !important;" [current]="step.index + 1" [max]="3"></round-progress>
+			</div>
+
+		</ion-title> -->
+
+        <ion-buttons style="margin-bottom: auto;" end>
+            <button ion-button (click)="toggleClick()">
+                <!-- <ion-toggle #autoToggle [(ngModel)]="formProvider.busyMode"></ion-toggle> -->
+                <!-- {{ busyMode ? "Busy" : "Normal" }} -->
+                Busy&nbsp;
+				<ion-icon [name]="formProvider.busyMode ? 'play' : 'pause'"></ion-icon>
+            </button>
+			<button *ngIf="!isNative" (click)="debugMe()" ion-button>
+				<ion-icon name="bug"></ion-icon>
+			</button>
+            <button (click)="clearForm();" ion-button>
+                Reset&nbsp;
+                <ion-icon name="md-refresh"></ion-icon>
+            </button>
+        </ion-buttons>
+
+
+	<!-- <ion-toolbar> -->
+		<ion-row *ngIf="!formProvider.busyMode" class="progress-wrapper-row">
+			<ion-col col-3>
+				<div class="progress-wrapper-div">
+						<span>{{ step.index + 1 }} of 3</span>
+					<round-progress [color]="'#32db64'" [current]="step.index + 1" [max]="3"></round-progress>
+				</div>
+			</ion-col>
+			<ion-col col-9 align-self-center>
+				<div class="step-titles">
+					<h2 class="current-step">{{ step?.displayTitle }}</h2>
+					<p class="next-step">Next: {{ step?.next?.displayTitle }}</p>
+				</div>
+			</ion-col>
+		</ion-row>
+	<!-- </ion-toolbar> -->
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+	<!-- <div class="test-radial">
+		<div class="pie-wrapper progress-half">
+			<span class="label">10<em>%</em></span>
+			<div class="pie">
+				<div class="left-side half-circle"></div>
+				<div class="right-side half-circle"></div>
+			</div>
+		</div>
+	</div> -->
+
+    <!-- <div>
+        <ul id="progressbar">
+              <li (click)="setCustomer()"
+                  [className]="step?.$class?.customer">
+                  Customer
+              </li>
+
+              <li (click)="setCar()"
+                  [className]="step?.$class?.car">
+                  Car
+              </li>
+
+              <li (click)="setCarNotes()"
+                  [className]="step?.$class?.carnotes">
+                  Photos/Notes
+              </li>
+        </ul>
+    </div> -->
+
+    <div *ngIf="!formProvider.busyMode" class="checkin-form-container">
+        <!--<form>-->
+        <div [hidden]="step.name !== 'customer'">
+            <customer-step [currentStep]="step.name === 'customer'"
+                           (notify)='onCustomerNotify($event)'>
+            </customer-step>
+        </div>
+
+        <div [hidden]="step.name !== 'car'">
+            <car-step [currentStep]="step.name === 'car'"
+                      (notify)='onCarNotify($event)'>
+            </car-step>
+        </div>
+
+        <div [hidden]="step.name !== 'carnotes'">
+            <car-photos-step [currentStep]="step.name === 'carnotes'" (notify)='onPhotosNotesNotify($event)'></car-photos-step>
+        </div>
+        <!--</form>-->
+    </div>
+
+    <div *ngIf="formProvider.busyMode">
+        <customer-step [busyMode]="true" (notify)='onBMCustomerNotify($event)'></customer-step>
+        <car-photos-step (notify)='onBMPhotosNotesNotify($event)'></car-photos-step>
+    </div>
+
+</ion-content>
+
+
+<ion-footer class="applyFooter checkin-form-control-footer">
+    <ion-grid>
+        <ion-row>
+
+            <ion-col col-6>
+                    <button round
+                            *ngIf="!formProvider.busyMode"
+                            [ngClass]="{'disabled':!formProvider?.ticket?.CurrentStep?.formstep?.prevStatus}"
+                            small
+                            full
+                            id="mst-previous"
+                            (click)="goToPreviousStep()"
+                            ion-button icon-left>
+                        <ion-icon name="arrow-back"></ion-icon>
+                        Previous
+                    </button>
+            </ion-col>
+
+            <ion-col col-6>
+                    <button round 
+                            *ngIf="formProvider.busyMode"
+                            [ngClass]="{ 'disabled': formProvider.currentProperty === 1000000000 ? !BMStatus?.customerValid : (!BMStatus?.customerValid || !BMStatus?.photosValid)  }"
+                            small full id="mst-next"
+                            (click)="submitBusyMode()"
+                            ion-button icon-right>
+                        Submit
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </button>
+
+                    <button round
+                            *ngIf="!formProvider.busyMode"
+                            [ngClass]="{ 'disabled': !(formProvider?.canGoNext | async) }"
+                            small full id="mst-next"
+                            (click)="goToNextStep()"
+                            ion-button icon-right>
+                        {{ step?.nextTitle }}
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </button>
+                    <!-- [ngClass]="{ 'disabled': (busyMode ? (!BMStatus?.customerValid || !BMStatus?.photosValid) : (!formProvider?.ticket?.CurrentStep?.formstep?.nextStatus)) }" -->
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

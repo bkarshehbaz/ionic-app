@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar no-padding>
+        <ion-title> {{title}}</ion-title>
+    </ion-navbar>
+
+    <ion-toolbar no-padding>
+        <ion-searchbar mode="ios" (input)="onInput($event)" [formControl]="filter" debounce="300">
+        </ion-searchbar>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content #searchableContent>
+
+    <div *ngIf="searchableType == 'make'; else isModel;">
+        <ion-spinner class="vss-spinner" *ngIf="isLoading"></ion-spinner>
+        <ion-list>
+            <span *ngFor="let make of makes$ | async; let i = index; let isOdd = odd; trackBy:trackByMakeId">
+                <ion-item (click)="onMakeSelected(make);" [class.odd]="isOdd">
+	                <li item-start [class]="make?.makeName | makeIcon"></li>
+                    <!-- {{ make?.makeName | highlight: filter }} -->
+                    <span [innerHTML]="make?.makeName | highlight: filter?.value"></span><!-- {{ make?.makeID}}-->
+                </ion-item>
+            </span>
+            <ion-spinner class="vss-infinite-loading" [hidden]="!isFiltering || myLimit > makes?.length || makes?.length < 11"></ion-spinner>
+        </ion-list>
+    </div>
+
+    <ng-template #isModel>
+        <ion-list>
+            <span *ngFor="let model of models$ | async; let i=index; let isOdd = odd; trackBy:trackByModelId">
+                <ion-item (click)="onModelSelected(model);" [class.odd]="isOdd">
+	                <li item-start [class]="make?.makeName | makeIcon"></li>
+                    <span [innerHTML]="model?.modelName | highlight: filter?.value"></span>
+                </ion-item>
+            </span>
+            <ion-spinner class="vss-infinite-loading" [hidden]="!isFiltering || myLimit > models?.length || models?.length < 11"></ion-spinner>
+        </ion-list>
+    </ng-template>
+
+</ion-content>

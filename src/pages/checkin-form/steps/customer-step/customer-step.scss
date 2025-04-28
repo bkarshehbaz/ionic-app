@@ -1,0 +1,54 @@
+customer-step, checkout-modal {
+
+	.error-message {
+		&.danger {
+			color: #f53d3d;
+		}
+		padding-top: 2px !important;
+		margin: 0 !important;
+		padding-left: 13px !important;
+    }
+
+}
+
+
+
+customer-step {
+    
+    .error-message {
+		padding-bottom: 0 !important;
+    }
+
+	.room-number :disabled {
+		pointer-events: none !important;
+	}
+
+    ion-col{
+        position: initial !important;
+	}
+
+	.item-input-disabled {
+		ion-label {
+			opacity: 0.55 !important;
+		}
+	}
+
+    text-input{
+
+    }
+    .animated {
+      animation-duration: 1s;
+    }
+    .scanners{
+
+    }
+    ion-list{
+        .item-cover,.input-wrapper{
+            background-color: rgba(255, 255, 255, 0) !important;
+            z-index: -100 !important;
+        }
+    }
+    .item-inner{
+        z-index: 1 !important;
+    }
+}

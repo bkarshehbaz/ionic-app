@@ -1,0 +1,51 @@
+vvs-status-bar {
+	// .online {
+	// 	background-color: green !important;
+	// 	&::before {
+	// 		content: "online"
+	// 	}
+	// }
+	// .offline {
+	// 	background-color: red !important;
+	// 	&::before {
+	// 		content: "offline"
+	// 	}
+	// }
+
+	.myhost {
+		/* width: 16px; */
+		height: 16px !important;
+		/* border-radius: 8px; */
+		right: calc(50vw - 125px) !important;
+		top: 1px !important;
+		position: absolute !important;
+		color: white !important;
+	}
+
+	.ablystate {
+
+
+		// width: 16px;
+		// height: 16px;
+		// border-radius: 8px;
+		// top: 11.5px;
+		// right: 83px;
+
+		&.connected {
+			background-color: #26d049;
+		}
+		&.failed {
+			background-color: red;
+		}
+
+		// z-index: 3000;
+
+		// top: 11px;
+		// right: 170px;
+		// font-size: 13px;
+		// padding: 3px;
+		// width: 80px;
+		// text-align: center;
+		// border: 1px solid;
+	}
+}

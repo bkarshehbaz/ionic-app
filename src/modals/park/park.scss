@@ -1,0 +1,120 @@
+park-modal {
+
+
+
+
+    edit-component{
+        .toolbar-ios ion-title {
+            padding: 0 35px 1px !important;
+        }
+	}
+
+
+
+
+    .animated {
+        animation-duration: 1s;
+        padding-top: 27px !important;
+        margin-bottom: -27px !important;
+    }
+
+    .park-items {
+        width: 100%;
+        ion-item {
+            width: 50% !important;
+            float: left;
+
+			.item-inner {
+				border-bottom: 0.55px solid #c8c7cc;
+			}
+		}
+
+		.pk-item {
+			&.disabled {
+				ion-label {
+					// @extend .disabled;
+					opacity: 0.4 !important;
+				}
+			}
+		}
+
+		.pa-item {
+			ion-input[disabled] input {
+				opacity: 1 !important;
+			}
+		}
+    }
+
+    .input-grid {
+        margin: 12px 12px 0px 12px !important;
+        padding: 0px !important;
+        width: calc(100% - 24px) !important;
+
+        ion-col[col-6]{
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+    }
+
+    .vvs-park-valid {
+        .item-inner {
+            border-bottom: 0.55px solid #32db64 !important
+        }
+    }
+    .vvs-park-invalid {
+        .item-inner {
+            border-bottom: 0.55px solid red !important;
+        }
+    }
+
+    .option {
+  		animation-duration: 5s !important;
+  		animation-delay: 2s !important;
+  		animation-iteration-count: 2 !important;
+  	}
+
+    ion-item {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        padding-top: 0px !important;
+        padding-bottom: 10px !important;
+        ion-icon{
+            position: absolute;
+            right: 10px !important;
+            bottom: 10px !important;
+            margin: 0px !important;
+            font-size: 1.6rem !important;
+            color: #c8c7cc !important;
+        }
+    }
+
+    // .ticket-number {
+    //     font-weight:bold;
+    //     color: red !important;
+    //     padding: 0px 2.5px !important;
+    //     border: 1px solid red;
+    // }
+
+    .background-area, .scroll-content {
+        background-color: lightgrey !important;
+    }
+
+    ion-list{
+        margin-top: 10px !important;
+        margin-bottom: 0px !important;
+    }
+
+    // #content-grid {
+    //     ion-row {
+    //         border-bottom: 1px solid lightgray !important;
+    //     }
+    //     ion-row:last-child {
+    //         border-bottom: 0px solid lightgray !important;
+    //     }
+    // }
+
+    // .text-input[disabled] {
+    //     opacity: 1 !important;
+    //     font-size: medium;
+    // }
+}

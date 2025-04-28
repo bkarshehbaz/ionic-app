@@ -1,0 +1,51 @@
+<ion-header *ngIf="isPage === true">
+    <ion-navbar [color]="'primary'">
+        <ion-title>
+            Summary
+        </ion-title>
+        <button ion-button (click)="viewController.dismiss()">close</button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background-area">
+    <h3 *ngIf="!summaryData && !isLoading" style="color: #578CA9;justify-content: center;display: flex;">Summary Not
+        Found</h3>
+    <div class="ticket-details content-background" *ngIf="summaryData &&!isLoading">
+        <ion-grid id="main-grid">
+            <ion-row>
+                <ion-col>
+                    <ion-card class="card-info-type">
+                        <ion-card-content>
+                            <ion-grid>
+                                <keyvalue-row key="Guest Name" *ngIf="summaryData.guests[0].first_name"
+                                    [value]="summaryData.guests[0].first_name + summaryData.guests[0].last_name"></keyvalue-row>
+                                <keyvalue-row key="VIP Guest" [value]="summaryData.guests[0].is_vip"></keyvalue-row>
+                                <keyvalue-row key="Arrival"
+                                    [value]="summaryData?.created_time | date : 'EEEE, MMM d, h:mm a'"></keyvalue-row>
+                                <keyvalue-row key="Reservation No"
+                                    [value]="summaryData.confirmation_number"></keyvalue-row>
+                                <ng-container *ngIf="summaryData?.addons &&summaryData?.addons.length > 0">
+                                    <keyvalue-row key="Amount"
+                                        [value]="summaryData?.addons[0].amount | currency"></keyvalue-row>
+                                    <keyvalue-row key="Amount Type"
+                                        [value]="summaryData?.addons[0].amount_type"></keyvalue-row>
+                                    <keyvalue-row key="Description"
+                                        [value]="summaryData?.addons[0].description"></keyvalue-row>
+                                </ng-container>
+                                <keyvalue-row key="currency Code" [value]="summaryData?.currency_code"></keyvalue-row>
+                                <keyvalue-row key="Segment Code" [value]="summaryData?.segment_code"></keyvalue-row>
+                                <keyvalue-row key="Market Segment Code"
+                                    [value]="summaryData?.market_segment_code"></keyvalue-row>
+                                <keyvalue-row key="Invoice No"
+                                    [value]="summaryData?.bills[0].invoice_number"></keyvalue-row>
+                                <keyvalue-row key="Status" [value]="summaryData.status"
+                                    [whitespace]="'normal'"></keyvalue-row>
+                            </ion-grid>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

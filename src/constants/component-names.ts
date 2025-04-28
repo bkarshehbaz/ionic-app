@@ -1,0 +1,76 @@
+// // import { ChatComponent } from '../pages/chat-component/chat-component';
+// // import { RecentActivityExpanded } from '../pages/ticket-view/card-notes-photos-map-view/recent-activity-expanded/recent-activity-expanded';
+// // import { CompleteTicketView } from '../pages/ticket-view/ticket-view';
+// // import { ImageViewer } from '../pages/ticket-view/image-viewer/image-viewer';
+// // import { ModalFooter } from '../pages/ticket-view/modal-footer/modal-footer';
+// // import { CheckOutComponent } from '../pages/ticket-view/modals/checkout-component/checkout-component';
+// // import { EditComponent } from '../pages/ticket-view/modals/edit-component/edit-component';
+// // import { ParkComponent } from '../pages/ticket-view/modals/park-component/park-component';
+// // import { PayCashComponent } from '../pages/ticket-view/modals/pay-cash-component/pay-cash-component';
+// // import { PayComponent } from '../pages/ticket-view/modals/pay-component/pay-component';
+// // import { PullComponent } from '../pages/ticket-view/modals/pull-component/pull-component';
+// // import { GlobalSearch } from '../pages/global-search/global-search';
+// // import { LegendComponent } from '../pages/home/legends/legends';
+// // import { LoginPage as $LoginPage } from '../pages/login-page/login-page';
+// // import { SelectSearchComponent } from '../pages/login-page/select-search-component/select-search-component';
+// // import { ColorPopover } from '../pages/checkin-form/color-popover/color-popover';
+// // import { MultiStepForm } from '../pages/checkin-form/checkin-form';
+// // import { SearchablePopover } from '../pages/checkin-form/searchable-popover/searchable-popover';
+// // import { SelectPopover } from '../pages/checkin-form/select-popover/select-popover';
+// // import { Reminders as $Reminders} from '../pages/reminder/reminders';
+// // import { TabsPage } from '../pages/tabs/tabs';
+// // export const MODAL_FOOTER            = ModalFooter;
+// // export const Color                   = ColorPopover;
+// // export const Search                  = GlobalSearch;
+// // export const Form                    = MultiStepForm;
+// // export const Park                    = ParkComponent;
+// // export const CheckOut                = CheckOutComponent;
+// // export const IMAGE_VIEWER            = ImageViewer;
+// // export const Select                  = SelectPopover;
+// // export const Pull                    = PullComponent;
+// // export const CTV                     = CompleteTicketView;
+// // export const PayCash                 = PayCashComponent;
+// // export const Legend                  = LegendComponent;
+// // export const Edit                    = EditComponent;
+// // export const LoginPage               = $LoginPage;
+// // export const SELECT_SEARCH_COMPONENT = SelectSearchComponent;
+// // export const TABS_PAGE               = TabsPage;
+// // export const RAE                     = RecentActivityExpanded;
+// // export const PAY_COMPONENT           = PayComponent;
+// // export const Searchable              = SearchablePopover;
+// // export const Reminders               = $Reminders;
+// // export const CHAT_COMPONENT          = ChatComponent;
+
+
+
+// // export let Comp = {
+
+//        const COMPONENT               = "Component";
+//        const PAGE                    = "Page";
+
+// export const MODAL_FOOTER            = "ModalFooter";
+// export const Color                   = "ColorPopover"              + PAGE;
+// export const Search                  = "GlobalSearch";
+// export const Form                    = "MultiStepForm";
+// export const Park                    = "Park"                      + COMPONENT;
+// export const CheckOut                = "CheckOut"                  + COMPONENT;
+// export const IMAGE_VIEWER            = "ImageViewer";
+// export const Select                  = "Select"                    + COMPONENT;
+// export const Pull                    = "Pull"                      + COMPONENT;
+// export const CTV                     = "CompleteTicketView";
+// export const PayCash                 = "PayCash"                   + COMPONENT;
+// export const Legend                  = "Legend"                    + COMPONENT;
+// export const Edit                    = "Edit"                      + COMPONENT;
+// export const LoginPage               = "Login"                     + PAGE;
+// export const SELECT_SEARCH_COMPONENT = "SelectSearch"              + COMPONENT;
+// export const TABS_PAGE               = "Tabs"                      + PAGE;
+// export const HOME_PAGE               = "Home"                      + PAGE;
+// export const CHAT_PAGE               = "Chat"                      + COMPONENT;
+// export const LOGS_PAGE               = "Logs"                      + PAGE;
+// export const RAE                     = "RecentActivityExpanded";
+// export const PAY_COMPONENT           = "Pay"                       + COMPONENT;
+// export const Searchable              = "SearchablePopover";
+// export const Reminders               = "Redinders";
+// export const CHAT_COMPONENT          = "Chat"                      + COMPONENT;
+// export const SETTINGS_COMPONENT		 = "Settings"				   + COMPONENT;
+// // };

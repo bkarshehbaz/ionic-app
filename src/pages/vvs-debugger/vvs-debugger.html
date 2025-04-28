@@ -1,0 +1,53 @@
+<ion-header *ngIf="isPage === true">
+	<ion-navbar [color]="'primary'">
+		<ion-title>
+			VVS Debugger
+		</ion-title>
+		<button ion-button (click)="viewController.dismiss()">close</button>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<div *ngIf="data" class="debuggerbody">
+		<div class="common protocols">
+			<h4>Ticket</h4>
+			<pre><code class="json">{{ data }}</code></pre>
+		</div>
+	</div>
+
+	<div *ngIf="!data">
+
+		<button (click)="chooseEnv()" ion-button>
+			ChooseEnv
+		</button>
+
+		<div *ngIf="vvsApp?.errors" class="common protocols">
+			<h4>Errors</h4>
+			<!-- <pre><code class="json">{{ vvsApp?.errors }}</code></pre> -->
+			<pre><code class="json" *ngFor="let error of vvsApp?.errors | slice:0:10">{{ error | json }}</code></pre>
+		</div>
+
+		<div *ngIf="properties" class="common protocols">
+			<h4>Environment</h4>
+			<pre><code class="json">{{ properties }}</code></pre>
+		</div>
+
+		<div *ngIf="loginUser" class="common protocols">
+			<h4>loginUser</h4>
+			<pre><code class="json">{{ loginUser }}</code></pre>
+		</div>
+
+		<div *ngIf="platform" class="common protocols">
+			<h4>platform</h4>
+			<pre><code class="json">{{ platform }}</code></pre>
+		</div>
+
+		<div *ngIf="device" class="common protocols">
+			<h4>device</h4>
+			<pre><code class="json">{{ device }}</code></pre>
+		</div>
+
+	</div>
+
+</ion-content>

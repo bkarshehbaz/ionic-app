@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Check In</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background-area">
+
+    <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+            <modal-header [ticket]="ticket"></modal-header>
+            <modal-details [ticket]="ticket"></modal-details>
+        </ion-card-content>
+	</ion-card>
+
+    <!-- <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+
+			<car-step
+				(notify)='onNotify($event)'>
+			</car-step>
+
+        </ion-card-content>
+    </ion-card> -->
+
+    <ion-card class="card-info-type">
+        <ion-card-content no-padding>
+
+			<car-photos-step
+				[clearMode]="true"
+				(notify)='onNotify($event)'>
+			</car-photos-step>
+
+        </ion-card-content>
+	</ion-card>
+
+    <card-notes-photos-map-view [config]="config"></card-notes-photos-map-view>
+
+</ion-content>
+
+<ion-footer>
+	<modal-footer
+		[disableSubmit]="!(carPhotos?.length > 0)"
+		(submit)="submit($event)"
+		(cancel)="dismiss($event)">
+    </modal-footer>
+</ion-footer>

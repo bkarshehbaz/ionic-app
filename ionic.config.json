@@ -1,0 +1,54 @@
+{
+	"name": "VVS",
+	"integrations": {
+		"cordova": {}
+	},
+	"proxies": [
+		{
+			"path": "*/mainoperation",
+			"proxyUrl": "http://localhost:3000/mainoperation/"
+		},
+		{
+			"path": "*/openalpr",
+			"proxyUrl": "https://api.openalpr.com/"
+		},
+		{
+			"path": "*/api",
+			"proxyUrl": "http://localhost:3000/"
+		},
+		{
+			"path": "*/api",
+			"proxyUrl": "http://localhost:3000/"
+		},
+		{
+			"path": "*/DecodeVINValuesBatch/",
+			"proxyUrl": "https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVINValuesBatch/"
+		},
+		{
+			"path": "*/s3",
+			"proxyUrl": "https://vvsphotos.api.vvsadmin.com/"
+		},
+		{
+			"path": "*/google_staticmap",
+			"proxyUrl": "https://maps.googleapis.com/maps/api/staticmap/"
+		},
+		{
+			"path": "*/random-image",
+			"proxyUrl": "http://lorempixel.com/320/640/people/"
+		},
+		{
+			"path": "*/400",
+			"proxyUrl": "https://picsum.photos/200/300"
+		},
+		{
+			"path": "*/vingenerator",
+			"proxyUrl": "https://vingenerator.org/"
+		},
+		{
+			"path": "*/unsplash",
+			"proxyUrl": "https://unsplash.it/200/300"
+		}
+	],
+	"type": "angular",
+	"id": "f2d6a04b"
+}

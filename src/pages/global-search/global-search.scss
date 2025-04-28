@@ -1,0 +1,43 @@
+global-search {
+
+	.no-content {
+		color: #5d6b71 !important;
+		text-align: center !important;
+	}
+
+	ion-content {
+		&.chat .scroll-content {
+			background-color: #f0f5f8 !important;
+		}
+
+		&.recent, &.ticket {
+			 .scroll-content {
+				background-color: #f8f8f8 !important;
+			}
+		}
+	}
+
+	// .content-ios {
+	// 	background-color: #f8f8f8 !important;
+	// }
+
+	.segment-button:not(.segment-activated) {
+		background-color: #fff !important;
+	}
+
+    .search-highlight {
+		font-weight: bold !important;
+	}
+
+	.chat-items {
+
+		&, .item-ios {
+			// background-color: #f7f7f7 !important;
+			background-color: #f0f5f8 !important;
+		}
+
+		ion-item:last-child, .item-inner {
+			border: 0 !important;
+		}
+	}
+}

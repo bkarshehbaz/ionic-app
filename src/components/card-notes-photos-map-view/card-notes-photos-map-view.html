@@ -1,0 +1,60 @@
+<ion-card class="vvs-card" [style.margin-top.px]="marginTop">
+
+    <ion-card-header class="segments-wrapper">
+        <ion-segment [(ngModel)]="activeSegment">
+            <ion-segment-button *ngFor="let tab of tabs; let i=index;" (ionSelect)="onSelect($event)"
+                [disabled]="tabs[i].disabled == true"
+                [class.activated]="activeSegment == tab.value || activeSegment == tabs[i].value"
+                [value]="tabs[i].value">
+                {{tabs[i].title}}
+            </ion-segment-button>
+        </ion-segment>
+    </ion-card-header>
+
+    <span [ngSwitch]="true">
+        <ion-card-content class="scrollable" *ngSwitchCase="activeSegment == 'notes'">
+
+            <span class="span-content">
+                <notes-row [notes]="config?.notes"></notes-row>
+            </span>
+
+        </ion-card-content>
+
+        <ion-card-content class="photos-card-content" *ngSwitchCase="activeSegment == 'photos'">
+            <!-- If uses tab instead of click, no scroll is done -->
+            <photos-row (onPhotoClick)="onPhotoClick($event)" [config]="config"></photos-row>
+        </ion-card-content>
+
+        <ion-card-content *ngSwitchCase="activeSegment == 'map'">
+            <img-loader (click)="openMapsApp();" [src]="config?.mapUrl"></img-loader>
+        </ion-card-content>
+
+        <ion-card-content class="recent-activities" *ngSwitchCase="activeSegment == 'recent'">
+            <recent-activity-expanded [recentActivities]="config?.recentActivityItems | async"
+                [ticketNumber]="config?.ticketNumber">
+            </recent-activity-expanded>
+        </ion-card-content>
+
+        <ion-card-content *ngIf="activeSegment == 'payment'">
+            <ion-row>
+                <ion-col col-9>
+                    <!-- <keyvalue-row key="Payment ID"[value]="config?.ticket?.Payment?.paymentID"></keyvalue-row> -->
+                    <keyvalue-row key="Paid"
+                        [value]="config?.ticket?.Payment?.complete == 1 ? 'Yes' : 'No'"></keyvalue-row>
+                    <keyvalue-row key="Paid with"
+                        [value]="config?.ticket?.Payment?.paymentTypeID | paymentType : 'paymentTypeName' | async"></keyvalue-row>
+                    <keyvalue-row key="Date"
+                        [value]="config?.ticket?.Payment?.paymentTimeStamp | date : 'EEEE, MMM d, h:mm a' "></keyvalue-row>
+                </ion-col>
+                <ion-col col-3>
+                    <img-loader (click)="onPhotoClick({ 'images': [{ uri: config?.voucherPhotoURL }], 'index': 0 })"
+                        class="voucher-photo" [src]="config?.voucherPhotoURL || carplaceholder"></img-loader>
+                </ion-col>
+            </ion-row>
+
+
+            <!-- <keyvalue-row key="Paid with" [value]="config?.ticket?.Payment?.paymentTypeID | paymentType : 'paymentTypeName' | async"></keyvalue-row> -->
+        </ion-card-content>
+
+    </span>
+</ion-card>

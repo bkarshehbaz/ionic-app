@@ -1,0 +1,91 @@
+{
+	// Controls auto save of dirty files. Accepted values:  'off', 'afterDelay', 'onFocusChange' (editor loses focus), 'onWindowChange' (window loses focus). If set to 'afterDelay', you can configure the delay in 'files.autoSaveDelay'.
+	"files.autoSave": "off",
+
+	// Controls the font size in pixels.
+	"editor.fontSize": 17,
+
+	// Controls the font family.
+	"editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+
+	// The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+	"editor.tabSize": 4,
+
+	// Controls how the editor should render whitespace characters, possibilities are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+	"editor.renderWhitespace": "all",
+
+	// Controls the cursor style, accepted values are 'block', 'block-outline', 'line', 'line-thin', 'underline' and 'underline-thin'
+	"editor.cursorStyle": "line",
+
+	// The modifier to be used to add multiple cursors with the mouse. `ctrlCmd` maps to `Control` on Windows and Linux and to `Command` on OSX. The Go To Definition and Open Link mouse gestures will adapt such that they do not conflict with the multicursor modifier.
+	"editor.multiCursorModifier": "alt",
+
+	// Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+	"editor.insertSpaces": true,
+
+	// Controls how lines should wrap. Can be:
+	//  - 'off' (disable wrapping),
+	//  - 'on' (viewport wrapping),
+	//  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
+	//  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+	"editor.wordWrap": "off",
+
+	// Configure glob patterns for excluding files and folders. For example, the files explorer decides which files and folders to show or hide based on this setting.
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		// "node_modules/**/*": true,
+		// "e2e/**.js": true,
+		// "e2e/**.js.map": true
+	},
+
+	// Configure file associations to languages (e.g. "*.extension": "html"). These have precedence over the default associations of the languages installed.
+	"files.associations": {},
+	"codedox": {
+		"autoInsert": true, // enables insertion of function comments trigged by keystrokes
+		"autoInsertHeader": true, // enables insertion of file header triggered by keystrokes
+		"autoPrefixOnEnter": true, // enables 'on enter' rules
+		"paramFormat": "@param ${name} - ", // supports ${name} and ${type}, plus built-in params
+		"returnFormat": "@return ${type}", // supports ${type}, plus built-in params
+		"allowOptionalArgs": false, // false strips the '?' prefix from optional function args
+		"alwaysMultiline": true, // if false non-functions (types) are single line
+		"commentprefix": "*  ",
+		"commentbegin": "/**",
+		"commentend": "*/",
+		"commentdescription": "[Description]",
+		"headerprefix": " *",
+		"headerbegin": "/*",
+		"headerend": " */",
+		"fileheader": {
+			"params": {
+				"*": {
+					"company": "VVS LLC",
+					"author": "Lucas Estrella"
+				}
+			},
+			"templates": {
+				"*": [
+					"${headerbegin}",
+					"${headerprefix} Copyright (c) ${year} ${company}",
+					"${headerprefix}",
+					"${headerprefix} Author: ${author}",
+					"${headerend}"
+				]
+			}
+		}
+	},
+	// "emeraldwalk.runonsave": {
+	//   "commands": [
+	//     {
+	//       "match": "\\.ts$",
+	//       "cmd": "node /Users/lucasdev/Project001/tasks/update-params.js --spec=${file}"
+	//     }
+	//   ]
+	// },
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"javascript.implicitProjectConfig.experimentalDecorators": true,
+	"prettier.tabWidth": 4
+}

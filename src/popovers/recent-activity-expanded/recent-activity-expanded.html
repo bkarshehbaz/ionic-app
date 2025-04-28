@@ -1,0 +1,26 @@
+<ion-list>
+    <ion-item-group>
+
+        <!-- <ion-item-divider sticky>
+           <ion-label>
+              Recent Activities for #{{ticketNumber}}
+           </ion-label>
+        </ion-item-divider> -->
+
+        <ion-list>
+            <recent-activity-item [recentActivities]="recentActivities"
+                                  [min]="0"
+                                  [myLimit]="10">
+            </recent-activity-item>
+        </ion-list>
+        <button (click)="openGlobalSearch()"
+                *ngIf="recentActivities?.length > 10"
+                ion-button
+                clear
+                icon-right
+                full>
+            Show more
+        </button>
+
+    </ion-item-group>
+</ion-list>

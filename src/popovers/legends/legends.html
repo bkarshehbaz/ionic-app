@@ -1,0 +1,19 @@
+<ion-list>
+	<ion-list-header text-center>Icon Legend</ion-list-header>
+	<ion-item *ngFor="let legend of legengMap">
+		<ion-label> {{ legend.title }}</ion-label>
+		<li item-right [ngStyle]="{ 'color':legend.color }" [ngClass]="legend.icon"></li>
+	</ion-item>
+</ion-list>
+
+<!-- <ion-list>
+	<ion-list-header text-center>Icon Legend</ion-list-header>
+	<ion-item (click)="legengMap[i].expanded=!legengMap[i].expanded;" *ngFor="let legend of legengMap;let i=index;">
+		<ion-icon no-margin [name]="legend.expanded ? 'arrow-down' : 'arrow-forward'" item-left></ion-icon>
+		<ion-label> {{ legend.title }}</ion-label>
+		<li item-right [style.color]="legend.color" [ngClass]="legend.icon"></li>
+		<p *ngIf="legend.expanded">
+			It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+		</p>
+	</ion-item>
+</ion-list> -->

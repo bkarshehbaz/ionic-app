@@ -1,0 +1,84 @@
+login-page {
+
+	input {
+		caret-color: white !important;
+	}
+
+	.scroll-content {
+		// background-color: map-get($colors, primary) !important;
+
+		$bgColor: map-get($colors, primary);
+		background-image: linear-gradient($bgColor, $bgColor, rgba(0, 0, 0, 0));
+
+		.username-item, .password-item {
+			background-color: rgba(0, 0, 0, 0);
+			// background-color: map-get($colors, primary) !important;
+		}
+
+		.username-item, .password-item {
+			color: #fff !important;
+		}
+
+		#submitButton {
+			color: map-get($colors, primary) !important;
+		}
+	}
+
+	.change-env {
+		position: absolute !important;
+		right: 8px !important;
+		top: 8px !important;
+	}
+
+	.toggle-channel {
+		position: absolute !important;
+		right: 8px !important;
+		top: 45px !important;
+		display: flex;
+	}
+
+	// ion-img,
+	img {
+		width: 35vw;
+		// height: 35vw;
+		margin-left: 32.5vw;
+		margin-top: 15vw;
+		// background: white;
+
+		// img {
+		// 	width: 100% !important;
+		// }
+	}
+
+	ion-note {
+		padding-left: 16px;
+	}
+
+    .item-inner{
+        margin-right: 16px !important;
+    }
+
+    .password-icon {
+		margin-right: -8px !important;
+		align-self: flex-end !important;
+		height: 50px;
+		ion-icon {
+			font-size:2em;
+			align-self:flex-end;
+		}
+
+		.item-inner {
+			padding-right: 0px !important;
+		}
+    }
+
+    .shown {
+		// color: #5f5f5f;
+		color: #fff;		
+    }
+    .hidden {
+		// color: #9E9E9E;
+		color: #c8c7cd;
+    }
+
+}

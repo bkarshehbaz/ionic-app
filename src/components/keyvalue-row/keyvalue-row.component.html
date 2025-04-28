@@ -1,0 +1,8 @@
+<ion-row>
+	<ion-col class="left-col" [ngClass]="'col-' + lWidth">
+		<p>{{ key }}:</p>
+	</ion-col>
+	<ion-col class="right-col" [ngClass]="'col-' + rWidth">
+		<p [style.white-space]="whitespace"> {{ value }}</p>
+	</ion-col>
+</ion-row>

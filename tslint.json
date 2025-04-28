@@ -1,0 +1,175 @@
+{
+  "no-redundant-jsdoc": false,
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-ionic-rules"
+  ],
+  "linterOptions": {
+      "exclude": [
+          "src/mocks/**/*"
+      ]
+  },
+  "cliOptions": {
+      "exclude": [
+          "src/mocks"
+      ]
+  },
+  "jsRules": {},
+  "rules": {
+    "no-multi-spaces": false,
+    "align": false,
+    "space-within-parens":false,
+	  "no-redundant-jsdoc": false,
+      "no-invalid-this": true,
+      "no-submodule-imports": false,
+      "no-object-literal-type-assertion": false,
+      "interface-name": false,
+      "no-unused-variable": [false, {"ignore-pattern": "^_"}],
+      "semicolon": [true],
+      "no-conditional-assignment": true,
+      "no-shadowed-variable": true,
+      "no-unused-expression": [true, "allow-fast-null-checks"],
+      "no-default-export": true,
+      "trailing-comma": false,
+      "only-arrow-functions": false,
+      "arrow-return-shorthand": true,
+      "callable-types": true,
+      "class-name": true,
+      "comment-format": [
+        false,
+        "check-space"
+      ],
+      "curly": true,
+      "eofline": true,
+      "forin": true,
+      "ordered-imports": false,
+      "import-blacklist": [
+        false,
+        "rxjs"
+      ],
+      "import-spacing": false,
+      "indent": [
+        false,
+        "tabs"
+      ],
+      "interface-over-type-literal": true,
+      "jsdoc-format": true,
+      "label-position": true,
+      "max-line-length": [
+        true,
+        200
+      ],
+      "member-access": false,
+      "member-ordering": [
+        false,
+        {
+          "order": [
+            "public-static-field",
+            "public-static-method",
+            "public-instance-field",
+            "public-constructor",
+            "public-instance-method",
+
+            "protected-static-field",
+            "protected-static-method",
+            "protected-instance-field",
+            "protected-constructor",
+            "protected-instance-method",
+
+            "private-static-field",
+            "private-static-method",
+            "private-instance-field",
+            "private-constructor",
+            "private-instance-method"
+          ]
+        }
+      ],
+      "no-arg": true,
+      "no-bitwise": false,
+      "no-console": [true],
+      "no-construct": true,
+      "no-debugger": true,
+      "no-duplicate-variable": [
+        true,
+        "check-parameters"
+      ],
+      "no-duplicate-super": true,
+      "no-empty": false,
+      "no-empty-interface": true,
+      "no-eval": true,
+      "no-inferrable-types": [
+        false,
+        "ignore-params",
+        "ignore-properties"
+      ],
+      "no-misused-new": true,
+      "no-non-null-assertion": true,
+      "no-string-literal": false,
+      "no-string-throw": true,
+      "no-switch-case-fall-through": true,
+      "no-trailing-whitespace": false,
+      "no-unnecessary-initializer": true,
+      "no-var-keyword": true,
+      "object-literal-sort-keys": false,
+      "one-line": [
+        true,
+        "check-open-brace",
+        "check-catch",
+        "check-else",
+        "check-whitespace"
+      ],
+      "prefer-const": true,
+      "quotemark": [
+        false,
+        "double"
+      ],
+      "radix": true,
+      "triple-equals": [
+        false,
+        "allow-null-check"
+      ],
+      "typedef": [
+        false,
+        "parameter",
+        "property-declaration"
+      ],
+      "no-import-side-effect": true,
+      "typedef-whitespace": [
+        false,
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        }
+      ],
+      "unified-signatures": true,
+      "variable-name": false,
+      "directive-selector": [
+        false,
+        "attribute",
+        "app",
+        "camelCase"
+      ],
+      "component-selector": [
+        false,
+        "element",
+        "app",
+        "kebab-case"
+      ],
+      "whitespace": [
+        false,
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type"
+      ],
+      "use-output-property-decorator": false,
+      "use-host-property-decorator": false,
+      "no-output-rename": false,
+
+      "no-implicit-dependencies": false
+    }
+}

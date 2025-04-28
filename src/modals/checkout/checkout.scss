@@ -1,0 +1,105 @@
+checkout-modal {
+
+    .error-message {
+		padding-bottom: 6px !important;
+    }
+
+    [item-border-bottom] {
+        // .item-inner {
+            border-bottom: 0.55px solid lightgrey;
+        // }
+    }
+    
+    .comp-card {
+        ion-item .item-inner {
+            padding-left: 0 !important;
+        }
+    }
+
+    .validation-card {
+
+        ion-card-header {
+            display: flex;
+            border-bottom: 1px solid lightgrey;
+            span {
+                align-self: center;
+            }
+            button {
+                margin-left: auto;
+            }
+        }
+        ion-icon {
+            display: inline-block;
+            font-size: 3em;
+            color: #707070;
+        }
+
+        img {
+            max-height: 180px;
+            // object-fit: contain;
+            // -o-object-fit: contain;
+            object-fit: cover;
+            padding-top: 16px;
+        }
+    }
+
+    .pa-item {
+        ion-input[disabled] input {
+            opacity: 1 !important;
+        }
+    }
+
+    .not-hotel {
+        .card-content {
+            padding: 0px 16px 13px 14px !important;
+        }
+    }
+
+    .toolbar-ios ion-title {
+        padding: 0 90px 1px !important;
+    }
+
+    .info-table{
+        ion-col[col-4]{
+            p:first-child{
+                font-weight: bold !important;
+            }
+        }
+    }
+
+    ion-content{
+        //TO CHANGE
+        background-color: lightgrey !important;
+    }
+
+    .button-container {
+        height: 40px;
+        padding: 0 !important;
+      }
+
+    .button-container {
+        .scroll-content {
+            display: flex;
+            justify-content: center;
+            background-color: #FFFFFF;
+            overflow: hidden;
+        }
+        button[ion-button] {
+            height: 35px;
+            width: 100%;
+            border-width: 1px;
+            border-color: #578CA9;
+            border-style: solid;
+            margin: 0 !important;
+            &:hover {
+                opacity: 1 !important;  
+              }
+        }
+        .no-button {
+            border-radius: 4px 0 0 4px;
+        }
+          .yes-button {
+            border-radius:  0 4px 4px 0;
+          }
+    }
+}

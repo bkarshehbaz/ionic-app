@@ -1,0 +1,7 @@
+<ion-slides [pager]="true" class="note-list" *ngIf="notes?.length > 0;">
+    <ion-slide *ngFor="let note of notes">
+        <h3> {{ note?.userID | userFLName | async }}</h3>
+        <p> {{ note?.data | decodeString }}</p>
+        <small text-right> {{note?.date | date:'short' }}</small>
+    </ion-slide>
+</ion-slides>

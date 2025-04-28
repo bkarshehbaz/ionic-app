@@ -1,0 +1,90 @@
+<!-- <ion-header>
+    <ion-navbar [color]="'primary'">
+        <ion-buttons left>
+          <button (click)="goBackToCompanies()" ion-button icon-only>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>Change Company
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header> -->
+
+<ion-content class="home" [class.is-browser]="vvsApp?.device?.model == 'browser'">
+
+	<vvs-status-bar></vvs-status-bar>
+
+	<button class="change-env"
+			outline
+			small
+            ion-button
+            color="white"
+			*ngIf="devMode == 'true' || env.CURRENT_ENV != 'prod'"
+			(click)="changeEnv()">
+		Change Env
+    </button>
+
+    <!-- <div class="toggle-channel" *ngIf="devMode == 'true' || envKey != 'prod'">
+        <ion-label>{{ isTestChannel ? 'Production' : 'Test' }}</ion-label>
+        <ion-toggle [(ngModel)]="isTestChannel"></ion-toggle>
+    </div> -->
+
+    <img src="/assets/logo_640x561.png" />
+    <!-- <ion-img src="/assets/login_logo.png"></ion-img> -->
+    <!-- <ion-img src="/assets/VVSLOGO-01(BLUE).svg"></ion-img> -->
+    <!-- <ion-img [src]="logo"></ion-img> -->
+
+    <!-- <li item-right class="micon-android-call" style="color: orange;"></li> -->
+
+    <div class="form-wrapper">
+
+	<form>
+
+        <ion-item class="username-item">
+            <ion-label stacked>Username</ion-label>
+			<ion-input [(ngModel)] = "username"
+					   [ngModelOptions]="{standalone: true}"
+                       type="text"
+                       spellcheck="false"
+                       autocapitalize="off"
+                       required>
+            </ion-input>
+        </ion-item>
+        <ion-item class="password-item">
+            <ion-label stacked>Password</ion-label>
+			<ion-input [(ngModel)] = "password"
+					   (ngModelChange)="onPasswordChange()"
+					   #passwordInput
+                       type="password"
+					   spellcheck="false"
+					   clearOnEdit="false"
+					   [ngModelOptions]="{standalone: true}"
+                       autocapitalize="off"
+                       required>
+			</ion-input>
+			<button class="password-icon"
+					[ngClass]="passwordShown ? 'shown' : 'hidden'"
+					item-end
+					ion-button
+					clear
+					(click)="togglePassType($event)">
+				<ion-icon name="eye"></ion-icon>
+			</button>
+        </ion-item>
+        <ion-note [ngClass]="passwordShown ? 'shown' : 'hidden'" [innerHTML]="getPassText()"></ion-note>
+    </form>
+    </div>
+    
+
+    <div padding class="submit-wrapper">
+        <button (click)="login()"
+                ion-button
+                id="submitButton" color="white"
+                [disabled]="username?.length < 3 || password?.length < 3"
+            block>Sign In
+        </button>
+	</div>
+
+    <p style="position: absolute;right:5px;bottom: 0;color: #578CA9;">
+        {{ env.CURRENT_CHANNEL[0]?.toLowerCase() }}{{ env?.CURRENT_ENV[0]?.toLowerCase() }}{{ env?.git?.short }}
+    </p>
+
+</ion-content>

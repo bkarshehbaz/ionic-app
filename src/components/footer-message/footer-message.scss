@@ -1,0 +1,22 @@
+footer-message {
+
+    // background: white !important;
+
+    .footer-message {
+        display: block;
+        padding: 15px;
+        font-size: 17px;
+        font-weight: bold;
+        color: rgba(29, 29, 29, 0.69);
+        // height: 130px;
+        height: 90px;
+
+        span {
+            margin-top: 8px;
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+}

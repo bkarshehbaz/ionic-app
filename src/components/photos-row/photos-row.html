@@ -1,0 +1,30 @@
+<!--  [ngClass]="{'one':message.msgImage.length == 1, 'two':message.msgImage.length == 2, 'three':message.msgImage.length == 3}"   -->
+<ion-grid [ngClass]="config?.class" no-padding>
+
+	<ion-row #scrollContent class="sent-message-photos-row">
+
+        <ion-col col-4 [class.single]="config?.images?.length == 1"
+                 *ngFor="let image of config?.images;let i=index;"
+				 (click)="openImage(i, config?.images)">
+
+			<img-loader [src]=" image?.uri || getSrc(image) "></img-loader>
+
+			<span *ngIf="config?.class == 'card-notes'" class="photo-timestamp">
+				{{ image.date | momentFormat : 'fromNow' }}
+			</span>
+
+			<button icon-only ion-button small round
+				*ngIf="showRemoveButton"
+				[attr.data-action]="'remove-photo'"
+				[attr.data-index]="i"
+				class="delete-photo">
+
+				<ion-icon name="close"></ion-icon>
+
+			</button>
+
+		</ion-col>
+
+	</ion-row>
+
+</ion-grid>

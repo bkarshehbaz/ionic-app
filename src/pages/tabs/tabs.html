@@ -1,0 +1,48 @@
+<ion-tabs #myTabs
+          id="myTabs"
+		  (ionChange)="onTabChange($event)"
+		  tabsLayout="icon-top"
+		  tabsPlacement="bottom"
+
+          color="primary">
+
+    <ion-tab [root]="tab1Root" tabTitle="Keybox" tabIcon="home"></ion-tab>
+
+    <ion-tab [root]="tab2Root"
+             tabTitle="Chat"
+             tabIcon="ios-chatbubbles"
+             tabBadge=""
+             [tabBadge]="vvsApp.chatBadge.subject | async"
+             tabBadgeStyle="danger">
+    </ion-tab>
+
+    <ion-tab tabTitle="Scan" id="scan-tab"
+             tabIcon="ios-barcode">
+    </ion-tab>
+
+    <ion-tab [root]="tab4Root"
+             tabTitle="Check-in"
+             tabIcon="ios-add">
+    </ion-tab>
+
+    <ion-tab [root]="tab5Root"
+             tabTitle="Notifications"
+             tabIcon="ios-notifications"
+             [tabBadge]="vvsApp.recentActivityBadge.subject | async"
+             tabBadgeStyle="danger">
+	</ion-tab>
+
+	<!-- <span class="on-off" [ngClass]="(vvsApp.socketService.onlineSubject | async) ? 'online' : 'offline'"></span> -->
+	<vvs-status-bar></vvs-status-bar>
+	<!-- <span class="ablystate" [ngClass]="vvsApp?.ably?.state">
+		{{ env }}
+		{{
+			vvsApp?.ably?.state == "connected"
+			? "online"
+			: vvsApp?.ably?.state == "disconnected"
+			? "offline"
+			: vvsApp?.ably?.state
+		}}
+	</span> -->
+
+</ion-tabs>

@@ -1,0 +1,11 @@
+<ion-list no-margin>
+    <ion-list-header> {{title}}</ion-list-header>
+</ion-list>
+<ion-content>
+    <ion-list>
+        <ion-item (click)="onItemSelected(item);" *ngFor="let item of items" [ngClass]="{ 'disabled': item.disabled }">
+            <!-- <ion-icon item-start *ngIf="item.icon" [name]="item?.icon"></ion-icon> -->
+            <ion-label> {{ item.name }}</ion-label>
+		</ion-item>
+    </ion-list>
+</ion-content>

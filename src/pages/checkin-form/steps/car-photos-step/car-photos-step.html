@@ -1,0 +1,40 @@
+
+<ion-list no-lines mode="ios">
+     <ion-item class="add-note-item">
+          <ion-label floating>Add a note</ion-label>
+		  <ion-textarea (ngModeChange)="validate()"
+						rows="1"
+						autoResizeTextarea
+						[(ngModel)]="note.data"
+						(ionBlur)="validate()">
+		  </ion-textarea>
+     </ion-item>
+</ion-list>
+
+<ion-grid [ngClass]="is_iPad ? 'is-ipad' : 'is-not-ipad'">
+    <ion-row>
+
+        <ion-col *ngFor="let carPhoto of carPhotos;let i=index;" col-4>
+            <ion-card #ionCards>
+                <ion-card-content no-padding style="display: flex;">
+                    <ion-thumbnail style="width:100%;" item-left>
+                        <img [src]="carPhoto.uri" (error)="onImageError($event)">
+					</ion-thumbnail>
+					<span (click)="showImageOptions($event, i)" class="right-option-button"></span>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+
+        <ion-col class="add-photo" col-4>
+            <ion-card [style.height.px]="cardHeight">
+                <ion-card-content [style.height.px]="cardHeight" (click)="takePicture()" no-padding>
+                    <ion-item>
+                        <ion-icon ios="ios-add-circle"></ion-icon>
+                    </ion-item>
+                    <!-- <span>Add Photo</span> -->
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+
+    </ion-row>
+</ion-grid>

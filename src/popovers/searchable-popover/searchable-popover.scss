@@ -1,0 +1,63 @@
+searchable-popover{
+
+    [class^="car-"], [class*=" car-"] {
+        font-size: 2rem !important;
+        min-width: 2rem;
+    }
+
+    .search-highlight {
+		font-weight: 500 !important;
+	}
+
+    ion-content{
+        margin-top: 75px !important;
+        // margin-top: 96px !important;
+    }
+
+    .scroll-content{
+        min-height: 290px !important;
+        height: 290px !important;// 350 - 96 = 254
+    }
+    ion-list{
+        margin-bottom: 30px !important;
+        padding-bottom: 35px !important;
+    }
+
+    .odd{
+        background-color: #f9f9f9 !important;
+    }
+
+    // .dummy-space{
+
+    // }
+
+    ion-title{
+        padding: 0px 0px 0px 8px !important;
+        .toolbar-title{
+            color: rgba(0, 0, 0, 0.74) !important;
+        }
+    }
+
+    .vvs-sb-back{
+        z-index:-100;
+    }
+
+    .vss-infinite-loading {
+        width: 26px;
+        height: 26px;
+        position: absolute;
+
+        margin-top: 3px;
+        
+        // bottom: 5px !important;
+        // top:calc(5% - 28px);
+        right:calc(50% - 13px);
+        * {
+            width: 26px;
+            height: 26px;
+            stroke: #444;
+            fill: #222;
+        }
+    }
+
+}

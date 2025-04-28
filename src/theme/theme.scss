@@ -1,0 +1,198 @@
+// $grey: c8c7cc;
+// $grey: #c8c7cc;
+
+// body.keyboard-is-open {
+//     .platform-android {
+//         div.tabbar.show-tabbar {
+//             display: none;
+//         }
+//         .scroll-content {
+//             margin-bottom: 0 !important;
+//             .checkin-form-control-footer {
+//                 bottom: 0 !important;
+//             }
+//         }
+//     }
+// }
+
+.display-none {
+    display: none !important;
+}
+
+body {
+    ion-app.disable-scroll {
+        ion-modal .ion-page {
+            pointer-events: all !important;
+            -ms-touch-action: all !important;
+            touch-action: all !important;
+        }    
+    }    
+}
+
+.d-flex {
+    display: flex !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.ml-auto {
+    margin-left: auto !important;
+}
+[no-margin] {
+    margin: 0 !important;
+}
+
+.vvs-valid {
+    .required-asterisk {
+        color: #535353 !important;
+    }
+}
+
+// global 
+.event-popover {
+    // select-popover {
+    //     ion-content, .scroll-content {
+    //         max-height: -webkit-fill-available !important;
+    //         max-height: fill-available !important;
+    //     }
+    // }
+    max-height: 40vh !important;
+    select-popover {
+        ion-content {
+            &, .scroll-content {
+                max-height: 35vh !important;
+            }
+        }
+    }
+
+    ion-backdrop {
+        height: 100vh !important;
+    }
+
+    .popover-viewport {
+        overflow: hidden !important;
+    }
+}
+
+.platform-ipad {
+
+    review-ticket {
+        .scroll-content {
+            padding: 24px 100px !important;
+        }
+    }
+
+    .event-popover {
+        max-height: 40vh !important;
+        select-popover {
+            ion-content {
+                &, .scroll-content {
+                    max-height: 35vh !important;
+                }
+            }
+        }
+
+        ion-backdrop {
+            height: 100vh !important;
+        }
+
+    }
+
+    .modal-wrapper {
+        height: calc(100vh - 100px) !important;
+        top: 25px !important;
+    }
+
+    recent-activity {
+        ion-list {
+            padding: 0 139px !important;
+        }
+    }
+
+    ticket-item-view {
+        & > ion-list {
+            margin: 13px 0 32px !important; // -16px 0 32px !important;
+            
+            text-align: -webkit-center !important;
+        }
+    }
+
+    login-page {
+        // .scroll-content {
+        //     padding-left: 20vw !important;
+        //     padding-right: 20vw !important;
+        // }
+        // ion-img {
+        //     margin-left: 12vw !important;
+        // }
+
+        .form-wrapper {
+
+            padding-top: 36px;
+
+            padding-left: 20vw !important;
+            padding-right: 20vw !important;
+        }
+
+        .submit-wrapper {
+            padding-left: calc(20vw + 8px) !important;
+            padding-right: calc(20vw + 8px) !important;
+        }
+    }
+
+    ticket-item-view {
+        .span-ion-item {
+            width: 65% !important;
+            // width: calc(50% - 18px) !important;
+            // float: left !important;
+            // margin: 0px 0 12px 12px !important;
+            margin: 12px !important;
+        }
+    }
+
+    checkin-form {
+        .checkin-form-container, .progress-wrapper-row {
+            padding: 0 100px !important;
+        }
+    }
+
+    // .add-photo {
+	// 	ion-card {
+	// 		// min-height: 89.5px !important;
+	// 		ion-card-content {
+    //             height: 100% !important;
+    //             background-color: rgba(219, 219, 219, 0.41) !important;
+    //             text-align: center !important;
+	// 			ion-icon {
+    //                 // text-align: center;
+    //                 // font-size: 42px !important;
+    //                 // min-height: 60px !important;
+    //                 // height: 60px !important;
+    //                 // margin-top: calc(50% - 30px) !important;
+    //                 // margin-top: calc(50% - 26px) !important;
+    //                 font-size: 42px !important;
+    //                 min-height: 60px !important;
+    //                 height: 60px !important;
+    //                 max-height: 60px !important;
+    //                 margin-top: calc(50% - 30px) !important;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+
+    .ticket-details.content-background {
+        padding: 0px 100px !important;
+    }
+
+    // .card-info-type:not(:nth-child(1)) {
+    //     margin: 0px 0 12px 12px !important;
+    //     width: calc(50% - 18px) !important;
+    //     float: left !important;
+    // }
+
+    // .card-info-type.move-up {
+    //     margin-top: -58px !important;
+    // }
+
+}
