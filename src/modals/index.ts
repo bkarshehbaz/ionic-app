@@ -7,4 +7,4 @@ export { ParkModule } from "./park/park.module";
 export { PullModule } from "./pull/pull.module";
 export { PullRequestModule } from "./pull-request/pull-request.module";
 export { ImageViewerModule } from "./image-viewer";
-export { PaymentCardConfirmComponent } from "./pay-card-confirm";
+export { PaymentCardConfirmComponent } from "./pay-card-confirm/pay-card-confirm";

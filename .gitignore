@@ -60,3 +60,10 @@ src/providers/index.ts
 .vscode/typings/cordova-ionic/plugins/keyboard.d.ts
 .vscode/plugins.json
 typings/cordova-typings.d.ts
+
+# Ignore accidentally created SSH agent key files
+eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)".pub
+
+# Ignore ZIP archives
+Archive.zip
