@@ -1,6 +1,6 @@
 {
 	// Controls auto save of dirty files. Accepted values:  'off', 'afterDelay', 'onFocusChange' (editor loses focus), 'onWindowChange' (window loses focus). If set to 'afterDelay', you can configure the delay in 'files.autoSaveDelay'.
-	"files.autoSave": "off",
+	"files.autoSave": "afterDelay",
 
 	// Controls the font size in pixels.
 	"editor.fontSize": 17,

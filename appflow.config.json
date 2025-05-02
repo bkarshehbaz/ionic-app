@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "appId": "f2d6a04b",
+      "appId": "98b39b76",
       "dependencyInstallCommand": "npm install --legacy-peer-deps --no-audit --no-fund"
     }
   ]
