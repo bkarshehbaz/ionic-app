@@ -148,8 +148,8 @@ const plugins = [
 		plugin: "cordova-plugin-ionic",
 		variables: {
 			CHANNEL_NAME: "Production",
-			APP_ID: "f2d6a04b",
-			ID: "f2d6a04b",
+			APP_ID: "98b39b76",
+			ID: "98b39b76",
 			UPDATE_METHOD: "none"
 		}
 	},

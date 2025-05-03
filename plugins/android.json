@@ -29,7 +29,7 @@
       "PACKAGE_NAME": "com.solitek.vvsdo"
     },
     "cordova-plugin-ionic": {
-      "APP_ID": "f2d6a04b",
+      "APP_ID": "98b39b76",
       "CHANNEL_NAME": "Production",
       "UPDATE_API": "https://api.ionicjs.com",
       "UPDATE_METHOD": "none",
