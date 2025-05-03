@@ -21,7 +21,7 @@ let envKey;
 
 if (process.env.CI_GIT_REF) {
 	envKey = process.env.CI_GIT_REF.toLowerCase();
-	envKey = envKey == "master" ? "dev" 
+	envKey = envKey == "master" || envKey == "main" ? "dev" 
 		   : envKey == "prod" ? "prod"
 		   : envKey;
 } else {
